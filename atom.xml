@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.lovek.me/"/>
-  <updated>2020-01-22T15:45:05.590Z</updated>
-  <id>http://www.lovek.me/</id>
+  <link href="http://lovek.me/"/>
+  <updated>2020-01-22T19:03:07.789Z</updated>
+  <id>http://lovek.me/</id>
   
   <author>
     <name>Lovely God</name>
@@ -17,9 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>博客搬家至GitHub,更换为Hexo框架</title>
+    <link href="http://lovek.me/av9/"/>
+    <id>http://lovek.me/av9/</id>
+    <published>2020-01-22T16:27:20.000Z</published>
+    <updated>2020-01-22T19:03:07.789Z</updated>
+    
+    <content type="html"><![CDATA[<ul>    <li>博客离开简洁的<a href="http://typecho.org/" target="_blank" rel="noopener">Typecho</a>花了5天时间，现在博客由<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>强力驱动，这5天基本没怎么睡觉好累(つω｀)～</li>    <img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.4/dywj/bqhexo/1.png">    <a id="more"></a>    <li>垃<>圾<><a href="https://studio.dev.tencent.com/" target="_blank" rel="noopener">腾讯云开发者平台cloud studio</a>1月21日下午3点20分突然进行升级操作令我丢了整个仓库的数据，最后折腾一番，<a href="https://coding.net/products/cloudstudio" target="_blank" rel="noopener">新版CODING</a>界面不熟悉而且还很卡，Hexo还没下载完，突然提醒限制每天只能使用两小时...(好无语..)</li>    <img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.4/dywj/bqhexo/2.png">    <li>最后只好改用本地环境搭建Hexo重新开始，顿时心里一万个***（脏话）**</li>    <li>博客离开了<a href="https://www.huaweicloud.com/" target="_blank" rel="noopener">华为云服务器</a>，转移至<a href="https://github.com" target="_blank" rel="noopener">GitHub</a>托管，感谢华为云这段时间的收留.</li>    <img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.4/dywj/bqhexo/3.png">    <li>终于可以吧买服务器的钱省下来吃旋转小火锅啦~好激动~o(*≧▽≦)ツ┏━┓</li>    <li>马上要过年了哦，祝大家新年快乐</li>    <li>我很喜欢听手机收到压岁钱的提示音，有缘的小可爱现在可以<a href="https://cdn.jsdelivr.net/gh/cheng2924070927/Blog@v1.0.1/zswx.jpg" target="_blank" rel="noopener">向我转账</a>(*/ω＼*)害羞~</li>    <li><s>现在是晚上3点05分</s>，不，已经算是第二天早上3点了</li>    <li>坐在电脑面前冻得瑟瑟发抖的卑微Lovely God要去睡觉了，小可爱们晚安</li>    <li>对了，今后不要再喊我打游戏了，我是不会告诉你们我已经吧所有的游戏都<s>安装上了</s>卸载掉了(o゜▽゜)o☆</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+    &lt;li&gt;博客离开简洁的&lt;a href=&quot;http://typecho.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Typecho&lt;/a&gt;花了5天时间，现在博客由&lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;强力驱动，这5天基本没怎么睡觉好累(つω｀)～&lt;/li&gt;
+    &lt;img src=&quot;https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.4/dywj/bqhexo/1.png&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="日记本" scheme="http://lovek.me/categories/%E6%97%A5%E8%AE%B0%E6%9C%AC/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>100天成就达成！</title>
-    <link href="http://www.lovek.me/av8/"/>
-    <id>http://www.lovek.me/av8/</id>
+    <link href="http://lovek.me/av8/"/>
+    <id>http://lovek.me/av8/</id>
     <published>2019-12-24T11:11:00.000Z</published>
     <updated>2020-01-22T15:45:05.590Z</updated>
     
@@ -35,15 +58,15 @@
     </summary>
     
     
-      <category term="日记本" scheme="http://www.lovek.me/categories/%E6%97%A5%E8%AE%B0%E6%9C%AC/"/>
+      <category term="日记本" scheme="http://lovek.me/categories/%E6%97%A5%E8%AE%B0%E6%9C%AC/"/>
     
     
   </entry>
   
   <entry>
     <title>Kali Linux利用metasploit生成木马实现入侵Windows系统</title>
-    <link href="http://www.lovek.me/av7/"/>
-    <id>http://www.lovek.me/av7/</id>
+    <link href="http://lovek.me/av7/"/>
+    <id>http://lovek.me/av7/</id>
     <published>2019-12-12T15:47:00.000Z</published>
     <updated>2020-01-22T15:41:34.110Z</updated>
     
@@ -59,15 +82,15 @@
     </summary>
     
     
-      <category term="创作集" scheme="http://www.lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
+      <category term="创作集" scheme="http://lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
     
     
   </entry>
   
   <entry>
     <title>应用Service worker完成加快/离线访问博客</title>
-    <link href="http://www.lovek.me/av6/"/>
-    <id>http://www.lovek.me/av6/</id>
+    <link href="http://lovek.me/av6/"/>
+    <id>http://lovek.me/av6/</id>
     <published>2019-12-01T11:23:00.000Z</published>
     <updated>2020-01-22T15:30:47.404Z</updated>
     
@@ -82,15 +105,15 @@
     </summary>
     
     
-      <category term="创作集" scheme="http://www.lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
+      <category term="创作集" scheme="http://lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
     
     
   </entry>
   
   <entry>
     <title>3D Max 安装</title>
-    <link href="http://www.lovek.me/av5/"/>
-    <id>http://www.lovek.me/av5/</id>
+    <link href="http://lovek.me/av5/"/>
+    <id>http://lovek.me/av5/</id>
     <published>2019-11-23T12:33:00.000Z</published>
     <updated>2020-01-22T13:28:43.941Z</updated>
     
@@ -112,15 +135,15 @@
     </summary>
     
     
-      <category term="创作集" scheme="http://www.lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
+      <category term="创作集" scheme="http://lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
     
     
   </entry>
   
   <entry>
     <title>【零之魔法书】吾辈的佣兵不会输！</title>
-    <link href="http://www.lovek.me/av4/"/>
-    <id>http://www.lovek.me/av4/</id>
+    <link href="http://lovek.me/av4/"/>
+    <id>http://lovek.me/av4/</id>
     <published>2019-11-01T14:50:00.000Z</published>
     <updated>2020-01-22T15:16:57.103Z</updated>
     
@@ -144,15 +167,15 @@ var player = new DogePlayer({
     </summary>
     
     
-      <category term="创作集" scheme="http://www.lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
+      <category term="创作集" scheme="http://lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
     
     
   </entry>
   
   <entry>
     <title>我藏好了哦</title>
-    <link href="http://www.lovek.me/av3/"/>
-    <id>http://www.lovek.me/av3/</id>
+    <link href="http://lovek.me/av3/"/>
+    <id>http://lovek.me/av3/</id>
     <published>2019-09-16T16:03:00.000Z</published>
     <updated>2020-01-22T15:20:05.071Z</updated>
     
@@ -166,15 +189,15 @@ var player = new DogePlayer({
     </summary>
     
     
-      <category term="分享镜" scheme="http://www.lovek.me/categories/%E5%88%86%E4%BA%AB%E9%95%9C/"/>
+      <category term="分享镜" scheme="http://lovek.me/categories/%E5%88%86%E4%BA%AB%E9%95%9C/"/>
     
     
   </entry>
   
   <entry>
     <title>可爱的和泉纱雾呐！</title>
-    <link href="http://www.lovek.me/av2/"/>
-    <id>http://www.lovek.me/av2/</id>
+    <link href="http://lovek.me/av2/"/>
+    <id>http://lovek.me/av2/</id>
     <published>2019-09-16T15:44:00.000Z</published>
     <updated>2020-01-22T15:23:11.348Z</updated>
     
@@ -188,15 +211,15 @@ var player = new DogePlayer({
     </summary>
     
     
-      <category term="闲言语" scheme="http://www.lovek.me/categories/%E9%97%B2%E8%A8%80%E8%AF%AD/"/>
+      <category term="闲言语" scheme="http://lovek.me/categories/%E9%97%B2%E8%A8%80%E8%AF%AD/"/>
     
     
   </entry>
   
   <entry>
     <title>Hello,Word!</title>
-    <link href="http://www.lovek.me/av1/"/>
-    <id>http://www.lovek.me/av1/</id>
+    <link href="http://lovek.me/av1/"/>
+    <id>http://lovek.me/av1/</id>
     <published>2019-09-15T12:08:00.000Z</published>
     <updated>2020-01-21T06:52:12.000Z</updated>
     
@@ -209,7 +232,7 @@ var player = new DogePlayer({
     </summary>
     
     
-      <category term="日记本" scheme="http://www.lovek.me/categories/%E6%97%A5%E8%AE%B0%E6%9C%AC/"/>
+      <category term="日记本" scheme="http://lovek.me/categories/%E6%97%A5%E8%AE%B0%E6%9C%AC/"/>
     
     
   </entry>
