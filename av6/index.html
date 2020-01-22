@@ -88,19 +88,19 @@
 <meta name="description" content="有一个困扰 web 用户多年的困难——丧失网页持续。即便是世界上最佳的 web app，要是下载不了它，也短长常倒霉的体验。现在固然曾经有许多种技术去测试着办理这一问题。而跟着离线页面的出现，少许问题曾经得到打听决。有一个叫做 APP Cache 的 API 能够供应离线体验，但它的问题对照多。最紧张的问题是，仍旧没有一个好的统筹机制对资源缓存和自界说的网页要求举行掌握。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="应用Service worker完成加快&#x2F;离线访问博客">
-<meta property="og:url" content="http://lovek.me/av6/index.html">
+<meta property="og:url" content="http://www.lovek.me/av6/index.html">
 <meta property="og:site_name" content="Hi, Lovely god">
 <meta property="og:description" content="有一个困扰 web 用户多年的困难——丧失网页持续。即便是世界上最佳的 web app，要是下载不了它，也短长常倒霉的体验。现在固然曾经有许多种技术去测试着办理这一问题。而跟着离线页面的出现，少许问题曾经得到打听决。有一个叫做 APP Cache 的 API 能够供应离线体验，但它的问题对照多。最紧张的问题是，仍旧没有一个好的统筹机制对资源缓存和自界说的网页要求举行掌握。">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/25/lizoTI.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/25/liX158.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/25/liXlUf.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/25/liXKbt.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/25/liXQVP.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/LX/1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/LX/2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/LX/3.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/LX/4.png">
 <meta property="article:published_time" content="2019-12-01T11:23:00.000Z">
-<meta property="article:modified_time" content="2020-01-21T06:52:12.268Z">
+<meta property="article:modified_time" content="2020-01-22T15:30:47.404Z">
 <meta property="article:author" content="Lovely God">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/12/25/lizoTI.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/2.png">
 
 
 
@@ -157,7 +157,7 @@
 
 
 
-  <link rel="canonical" href="http://lovek.me/av6/"/>
+  <link rel="canonical" href="http://www.lovek.me/av6/"/>
 
 
 
@@ -381,7 +381,7 @@
   
 
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lovek.me/av6/">
+    <link itemprop="mainEntityOfPage" href="http://www.lovek.me/av6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lovely God">
@@ -475,9 +475,11 @@
       
 
       
-        <p><img src="https://s2.ax1x.com/2019/12/25/lizoTI.png" alt="Service worker"></p>
+        <img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/2.png">
+
 <p>有一个困扰 web 用户多年的困难——丧失网页持续。即便是世界上最佳的 web app，要是下载不了它，也短长常倒霉的体验。现在固然曾经有许多种技术去测试着办理这一问题。而跟着<strong>离线页面</strong>的出现，少许问题曾经得到打听决。有一个叫做 APP Cache 的 API 能够供应离线体验，但它的问题对照多。最紧张的问题是，仍旧没有一个好的统筹机制对资源缓存和自界说的网页要求举行掌握。</p>
 <a id="more"></a>
+
 <h2 id="Service-worker"><a href="#Service-worker" class="headerlink" title="Service worker"></a>Service worker</h2><p>因而 HTML5 提出了 Service Worker，Service worker 供应了许多新的才气，使得 web app 领有与 nativeapp 相像的离线体验、动静推送体验。</p>
 <p>Service worker 是一段剧本，它有才气往我们的涉猎器中写入缓存，过滤网页要求，将缓存内容作为网页相应后果输出。<br><strong>带来的结果是显而易见的：</strong></p>
 <blockquote>
@@ -489,15 +491,19 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">if</span> (navigator.serviceWorker) &#123;</span><br><span class="line">    <span class="comment">// 注册Service Worker scope表示作用的页面的path</span></span><br><span class="line">    <span class="comment">// register函数返回Promise</span></span><br><span class="line">    navigator.serviceWorker.register(<span class="string">'/service-worker.js'</span>,&#123;<span class="attr">scope</span>: <span class="string">'/'</span>&#125;) </span><br><span class="line">      .then(<span class="function"><span class="keyword">function</span> (<span class="params">registration</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(registration);</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.error(e);</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Service Worker is not supported in this browser.'</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p>以上代码会先检验 Service worker 在浏览器中是否可用，可用的话一个 Service worker（/service-worker.js）将被注册，要是这个 Service worker 已经注册过了，浏览器这会纰漏以上代码。<br><strong>{scope: ‘/‘}</strong> 显露 Service worker 用途的局限。<br>需要分析的是 service-worker.js 文件被放在这个域的根目次下，这意味着 service worker 是跟网站同源的。换句话说，这个 service worker 将会获得到这个域下的全部 fetch 事务。<br>要是 service worker 文件注册到 /example/service-worker.js ，那么 service worker 只能收到 /example/ 途径下的 fetch 事务（好比： /example/page1/, /example/page2/）。<br>要是 service worker 文件注册到根目次下 /service-worker.js ，同时 {scope: ‘/example’} ，那么 service worker 也只能收到 /example/ 途径下的 fetch 事务。</p>
 <p>service-worker.js 文件，我发起是放在网站的跟目录下，scope 不做更改，这样 service worker 领有非常大的应用局限。</p>
-<h2 id="安装-Service-worker"><a href="#安装-Service-worker" class="headerlink" title="安装 Service worker"></a>安装 Service worker</h2><p><img src="https://s2.ax1x.com/2019/12/25/liX158.png" alt="Service worker"></p>
+<h2 id="安装-Service-worker"><a href="#安装-Service-worker" class="headerlink" title="安装 Service worker"></a>安装 Service worker</h2><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/LX/1.png">
+
 <p>对于这个 service-worker.js 奈何写，详细可以稽查 API ，<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API" target="_blank" rel="noopener">MDN Service Worker API</a>。</p>
 <blockquote>
 <p>留意：将 service-worker.js 放到域的根目次下哦，这样 Service worker 才能领有非常大的应用局限。</p>
 </blockquote>
 <p>当今你可以到 chrome://inspect/#service-workers 这里，搜检 service worker 是否对你的网站启用了。<br>大概在 chrome://serviceworker-internals/ 中经管你的 Service worker 。<br>大概在涉猎器的开发者对象中也能够细致的查看 service worker 的缓存。</p>
-<p><img src="https://s2.ax1x.com/2019/12/25/liXlUf.png" alt="service worker"></p>
-<h2 id="Service-worker-核心-API"><a href="#Service-worker-核心-API" class="headerlink" title="Service worker 核心 API"></a>Service worker 核心 API</h2><p><img src="https://s2.ax1x.com/2019/12/25/liXKbt.png" alt="Service worker 核心 API"></p>
-<h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><p><img src="https://s2.ax1x.com/2019/12/25/liXQVP.png" alt="install"></p>
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/LX/2.png">
+
+<h2 id="Service-worker-核心-API"><a href="#Service-worker-核心-API" class="headerlink" title="Service worker 核心 API"></a>Service worker 核心 API</h2><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/LX/3.png">
+
+<h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/LX/4.png">
+
 <p>install 是安置一个 service worker 缓存，应用技巧能够是这样：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Set the callback for the install step</span></span><br><span class="line">self.addEventListener(<span class="string">'install'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Perform install steps</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>在 install 的 callback 中，我们需求执行一下步调：<br>1、开启一个缓存<br>2、缓存我们的文件<br>3、断定全部的资源是否要被缓存</p>
@@ -509,7 +515,6 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">self.addEventListener(<span class="string">'activate'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123; </span><br><span class="line"><span class="comment">// 监听worker的activate事件</span></span><br><span class="line">  event.waitUntil( <span class="comment">// 延迟activate事件直到</span></span><br><span class="line">    caches.keys().then(<span class="function"><span class="keyword">function</span>(<span class="params">keys</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.all(keys.map(<span class="function"><span class="keyword">function</span>(<span class="params">key, i</span>)</span>&#123; <span class="comment">// 清除旧版本缓存</span></span><br><span class="line">        <span class="keyword">if</span>(key !== CACHE_VERSION)&#123;</span><br><span class="line">          <span class="keyword">return</span> caches.delete(keys[i]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;))</span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="其他使用场景"><a href="#其他使用场景" class="headerlink" title="其他使用场景"></a>其他使用场景</h2><p>在网站 A 中，潜藏一个 iframe ，在这个 iframe 中注册一个 service worker ，这个 service worker 会缓存网站 B 所需的资源。<br>从未访问过网站 B，但网站曾经在你的建筑上预加载过了，一切仅仅由于你访问过网站 A。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://B.com/iframe.html"</span> <span class="attr">style</span>=<span class="string">"width: 0; height: 0; border: 0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML5 For Web Designers<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span></span><br><span class="line"><span class="actionscript">  navigator.serviceWorker.register(<span class="string">'/serviceworker.js'</span>);</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -631,7 +636,7 @@
           shortname: 'diygod-me',
           siteName: 'Hi, Lovely god',
           identifier: 'av6/',
-          url: 'http://lovek.me/av6/',
+          url: 'http://www.lovek.me/av6/',
           api: 'https://disqus.diygod.me/api/',
           apikey: 'h403RnxQYBk2VylgLZwxodAtYOEL9bzgfhpcc8AZEU0EXn9cEWUoTwrgL3VB5tvj',
           admin: 'DIYgod',
