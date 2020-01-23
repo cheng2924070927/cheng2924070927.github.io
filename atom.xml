@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lovek.me/"/>
-  <updated>2020-01-22T19:03:07.789Z</updated>
+  <updated>2020-01-23T11:57:37.045Z</updated>
   <id>https://lovek.me/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>现在可以订阅博客了！</title>
+    <link href="https://lovek.me/av10/"/>
+    <id>https://lovek.me/av10/</id>
+    <published>2020-01-23T03:59:02.000Z</published>
+    <updated>2020-01-23T11:57:37.045Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>博客已开通Email邮箱订阅功能，小可爱们现在可以随时捕捉到Lovely God的动态了！</li><li><a href="http://eepurl.com/gQlA05" target="_blank" rel="noopener">订阅 Hi, Lovely God</a>（推荐使用<a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank" rel="noopener">Chrome浏览器</a>订阅博客）</li></ul><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/2.png"><a id="more"></a><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/1.png"><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/3.png">]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;博客已开通Email邮箱订阅功能，小可爱们现在可以随时捕捉到Lovely God的动态了！&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eepurl.com/gQlA05&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;订阅 Hi, Lovely God&lt;/a&gt;（推荐使用&lt;a href=&quot;https://www.google.cn/intl/zh-CN/chrome/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Chrome浏览器&lt;/a&gt;订阅博客）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&quot;https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/2.png&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="日记本" scheme="https://lovek.me/categories/%E6%97%A5%E8%AE%B0%E6%9C%AC/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>博客搬家至GitHub,更换为Hexo框架</title>

