@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lovek.me/"/>
-  <updated>2020-01-26T09:45:38.370Z</updated>
+  <updated>2020-02-09T05:25:16.454Z</updated>
   <id>https://lovek.me/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个简洁漂亮的QQ名片-XML代码</title>
+    <link href="https://lovek.me/av11/"/>
+    <id>https://lovek.me/av11/</id>
+    <published>2020-02-09T04:43:41.000Z</published>
+    <updated>2020-02-09T05:25:16.454Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>可以做QQ名片，效果如下图所示，代码在文章下面</li><li>如果SQV8发不出来可尝试多发送几次</li></ul>代码如下：<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">msg</span> <span class="attr">templateID</span>=<span class="string">"273"</span> <span class="attr">serviceID</span>=<span class="string">"125"</span> <span class="attr">action</span>=<span class="string">"plugin"</span> <span class="attr">actionData</span>=<span class="string">"AppCmd://OpenContactInfo/?uin=2924070927"</span> <span class="attr">a_actionData</span>=<span class="string">"mqqapi://card/show_pslcard?src_type=internal<span class="symbol">&amp;amp;</span>source=sharecard<span class="symbol">&amp;amp;</span>version=1<span class="symbol">&amp;amp;</span>uin=2924070927"</span> <span class="attr">i_actionData</span>=<span class="string">"mqqapi://card/show_pslcard?src_type=internal<span class="symbol">&amp;amp;</span>source=sharecard<span class="symbol">&amp;amp;</span>version=1<span class="symbol">&amp;amp;</span>uin=2924070927"</span> <span class="attr">brief</span>=<span class="string">"[QQ红包]恭喜发财"</span> <span class="attr">flag</span>=<span class="string">"2"</span> <span class="attr">url</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">item</span> <span class="attr">bg</span>=<span class="string">"0"</span> <span class="attr">layout</span>=<span class="string">"4"</span>&gt;</span><span class="tag">&lt;<span class="name">picture</span> <span class="attr">cover</span>=<span class="string">"http://s.p.qq.com/pub/get_face?img_type=3<span class="symbol">&amp;amp;</span>uin=2924070927"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span> <span class="attr">size</span>=<span class="string">"30"</span> <span class="attr">color</span>=<span class="string">"#ff0000"</span>&gt;</span>Lovely God<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">summary</span> <span class="attr">color</span>=<span class="string">"#ff0000"</span>&gt;</span>QQ:2924070927博客:lovek.me<span class="tag">&lt;/<span class="name">summary</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">summary</span> <span class="attr">color</span>=<span class="string">"#A96B28"</span>&gt;</span><span class="tag">&lt;/<span class="name">summary</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">summary</span> <span class="attr">color</span>=<span class="string">"#706C61"</span>&gt;</span><span class="tag">&lt;/<span class="name">summary</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span><span class="tag">&lt;/<span class="name">hr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">summary</span> <span class="attr">color</span>=<span class="string">"#CD661D"</span>&gt;</span>Telegram频道:t.me/lovelygod3<span class="tag">&lt;/<span class="name">summary</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">name</span>=<span class="string">"腾讯QQ认证"</span> <span class="attr">icon</span>=<span class="string">"http://suo.im/5oKnGf"</span> /&gt;</span><span class="tag">&lt;/<span class="name">msg</span>&gt;</span></span><br></pre></td></tr></table></figure><img src="http://104a.cn/upload/attach/202002/131815_SGNNUA9BKKEBZME.jpg" /><ul><li>代码中serviceID="125"数值改为126即可变成居中卡片，效果看图片</li><li>居中后卡片不可撤回、不可转发、不可复制、不可收藏、不可转化成聊天记录、无法看到发送人头像</li><li>代码中凡是2924070927这段数字全改为自己的QQ号即可实现点击卡片跳转到自己的QQ资料卡</li><li>代码中仍有很多不足的地方，懂的自己看着改就可以了</li><li>serviceID为125的卡片只要把代码中的flag="2"数值改为3即可实现拒绝转发</li><li>如果SQV8发不出来可尝试多发送几次</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;可以做QQ名片，效果如下图所示，代码在文章下面&lt;/li&gt;
+&lt;li&gt;如果SQV8发不出来可尝试多发送几次&lt;/li&gt;
+&lt;/ul&gt;
+代码如下：
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;p
+      
+    
+    </summary>
+    
+    
+      <category term="创作集" scheme="https://lovek.me/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>现在可以订阅博客了！</title>
