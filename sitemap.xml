@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lovek.me/av12/</loc>
+    <loc>https://lovek.me/friends/index.html</loc>
     
-    <lastmod>2020-02-14T12:52:10.779Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lovek.me/av11/</loc>
-    
-    <lastmod>2020-02-14T12:52:09.615Z</lastmod>
+    <lastmod>2020-02-14T13:22:05.449Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://lovek.me/about/index.html</loc>
     
-    <lastmod>2020-01-31T09:55:56.717Z</lastmod>
+    <lastmod>2020-02-14T13:13:54.533Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lovek.me/av12/</loc>
+    
+    <lastmod>2020-02-14T13:11:31.112Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lovek.me/av5/</loc>
+    
+    <lastmod>2020-02-14T13:10:58.460Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lovek.me/av11/</loc>
+    
+    <lastmod>2020-02-14T13:10:50.599Z</lastmod>
     
   </url>
   
@@ -79,23 +93,9 @@
   </url>
   
   <url>
-    <loc>https://lovek.me/av5/</loc>
-    
-    <lastmod>2020-01-22T13:28:43.941Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lovek.me/donate/index.html</loc>
     
     <lastmod>2020-01-21T15:14:55.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lovek.me/friends/index.html</loc>
-    
-    <lastmod>2020-01-21T09:51:28.000Z</lastmod>
     
   </url>
   
@@ -121,14 +121,14 @@
   </url>
   
   <url>
-    <loc>https://lovek.me/archives/index.html</loc>
+    <loc>https://lovek.me/categories/index.html</loc>
     
     <lastmod>2020-01-21T06:52:12.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lovek.me/categories/index.html</loc>
+    <loc>https://lovek.me/archives/index.html</loc>
     
     <lastmod>2020-01-21T06:52:12.000Z</lastmod>
     
