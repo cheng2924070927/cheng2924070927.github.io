@@ -164,7 +164,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@0.2.5/dist/disqusjs.css">
 
 
-
   <title>应用Service worker完成加快/离线访问博客 | Hi, Lovely god</title>
   
 
@@ -657,23 +656,26 @@
   
 
     
+
+    
       <script type="text/javascript">
-        window.DISQUS = null;
-        new DisqusJS({
-          shortname: 'LovelyGod',
-          siteName: 'Hi, Lovely god',
-          identifier: 'av6/',
-          url: 'https://lovek.me/av6/',
-          api: 'https://disqus.skk.moe/disqus/',
-          apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
-          admin: 'Lovely God',
-          adminLabel: '发电',
-        });
+        var disqusjs = {
+          config : {
+            shortname: 'LovelyGod',
+            identifier: 'av6/',
+            url: 'https://lovek.me/av6/',
+            title: '应用Service worker完成加快/离线访问博客',
+            api: 'https://disqus.skk.moe/disqus/',
+            apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
+            admin: 'Lovely God',
+            adminLabel: '发电'
+          }
+        };
       </script>
+      <script src="https://cdn.jsdelivr.net/npm/disqusjs@0.2.5/dist/disqus.js"></script>
     
 
   
-
 
 
 
