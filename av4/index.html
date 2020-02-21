@@ -157,8 +157,6 @@
 
 
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@0.2.5/dist/disqusjs.css">
-
 
   <title>【零之魔法书】吾辈的佣兵不会输！ | Hi, Lovely god</title>
   
@@ -646,23 +644,19 @@ var player = new DogePlayer({
   
 
     
-
-    
       <script type="text/javascript">
-        var disqusjs = {
-          config : {
-            shortname: 'LovelyGod',
-            identifier: 'av4/',
-            url: 'https://lovek.me/av4/',
-            title: '【零之魔法书】吾辈的佣兵不会输！',
-            api: 'https://disqus.skk.moe/disqus/',
-            apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
-            admin: 'Lovely God',
-            adminLabel: '发电'
-          }
-        };
+        window.DISQUS = null;
+        new DisqusJS({
+          shortname: 'LovelyGod',
+          siteName: 'Hi, Lovely god',
+          identifier: 'av4/',
+          url: 'https://lovek.me/av4/',
+          api: 'https://disqus.skk.moe/disqus/',
+          apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
+          admin: 'Lovely God',
+          adminLabel: '发电',
+        });
       </script>
-      <script src="https://cdn.jsdelivr.net/npm/disqusjs@0.2.5/dist/disqus.js"></script>
     
 
   

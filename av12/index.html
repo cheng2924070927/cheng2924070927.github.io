@@ -161,8 +161,6 @@
 
 
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@0.2.5/dist/disqusjs.css">
-
 
   <title>添加APlayer音乐播放器 | Hi, Lovely god</title>
   
@@ -642,23 +640,19 @@
   
 
     
-
-    
       <script type="text/javascript">
-        var disqusjs = {
-          config : {
-            shortname: 'LovelyGod',
-            identifier: 'av12/',
-            url: 'https://lovek.me/av12/',
-            title: '添加APlayer音乐播放器',
-            api: 'https://disqus.skk.moe/disqus/',
-            apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
-            admin: 'Lovely God',
-            adminLabel: '发电'
-          }
-        };
+        window.DISQUS = null;
+        new DisqusJS({
+          shortname: 'LovelyGod',
+          siteName: 'Hi, Lovely god',
+          identifier: 'av12/',
+          url: 'https://lovek.me/av12/',
+          api: 'https://disqus.skk.moe/disqus/',
+          apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
+          admin: 'Lovely God',
+          adminLabel: '发电',
+        });
       </script>
-      <script src="https://cdn.jsdelivr.net/npm/disqusjs@0.2.5/dist/disqus.js"></script>
     
 
   

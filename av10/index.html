@@ -159,8 +159,6 @@
 
 
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@0.2.5/dist/disqusjs.css">
-
 
   <title>现在可以订阅博客了！ | Hi, Lovely god</title>
   
@@ -621,23 +619,19 @@
   
 
     
-
-    
       <script type="text/javascript">
-        var disqusjs = {
-          config : {
-            shortname: 'LovelyGod',
-            identifier: 'av10/',
-            url: 'https://lovek.me/av10/',
-            title: '现在可以订阅博客了！',
-            api: 'https://disqus.skk.moe/disqus/',
-            apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
-            admin: 'Lovely God',
-            adminLabel: '发电'
-          }
-        };
+        window.DISQUS = null;
+        new DisqusJS({
+          shortname: 'LovelyGod',
+          siteName: 'Hi, Lovely god',
+          identifier: 'av10/',
+          url: 'https://lovek.me/av10/',
+          api: 'https://disqus.skk.moe/disqus/',
+          apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
+          admin: 'Lovely God',
+          adminLabel: '发电',
+        });
       </script>
-      <script src="https://cdn.jsdelivr.net/npm/disqusjs@0.2.5/dist/disqus.js"></script>
     
 
   
