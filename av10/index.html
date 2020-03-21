@@ -131,7 +131,7 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
     leancloud: {
-      enable: false,
+      enable: true,
       appID: '2VTdh2Nce1YbUB7wfNeJkQRR-gzGzoHsz',
       appKey: 'p5Too1Skl3oeqBjns2wonaJk'
     },
@@ -467,6 +467,18 @@
 
           
           
+             <span id="/av10/" class="leancloud_visitors" data-flag-title="现在可以订阅博客了！">
+               <span class="post-meta-divider">•</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">被</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span class="post-meta-item-text">人看爆</span>
+             </span>
+          
 
           
 
@@ -589,13 +601,38 @@
 
   
     <div class="comments" id="comments">
-      <div id="vcomments"></div>
+      <div id="disqus_thread">
+        <div id="dsqjs">
+          <section class="dsqjs-info">
+            <p id="dsqjs-load-disqus" class="dsqjs-message">评论完整模式加载中...如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+          </section>
+        </div>
+      </div>
     </div>
+
   
 
 
 
 
+
+  
+
+    
+      <script type="text/javascript">
+        window.DISQUS = null;
+        new DisqusJS({
+          shortname: 'LovelyGod',
+          siteName: 'Hi, Lovely God',
+          identifier: 'av10/',
+          url: 'https://lovek.me/av10/',
+          api: 'https://disqus.skk.moe/disqus/',
+          apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
+          admin: 'Lovely God',
+          adminLabel: '发电',
+        });
+      </script>
+    
 
   
 
@@ -613,31 +650,12 @@
 
 
 
-  
 
 
 
 
 
 
-
-
-
-
-  
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7-rc3/dist/Valine.min.js"></script>
-  <script type="text/javascript">
-    new Valine({
-        av: AV,
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        app_id: 'I5T6sIvR8BNT5MNqPVOk51Dm-gzGzoHsz',
-        app_key: 'a4WBASF3BMlqdi2kwj8KudLr',
-        placeholder: '小可爱你有什么想说的嘛？'
-    });
-  </script>
 
 
 
