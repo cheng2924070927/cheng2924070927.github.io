@@ -938,6 +938,10 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
+    </div>
+  
 
 
 
@@ -969,6 +973,21 @@
 
 
 
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7-rc3/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+    new Valine({
+        av: AV,
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        app_id: 'I5T6sIvR8BNT5MNqPVOk51Dm-gzGzoHsz',
+        app_key: 'a4WBASF3BMlqdi2kwj8KudLr',
+        placeholder: '小可爱你有什么想说的嘛'
+    });
+  </script>
 
 
 
