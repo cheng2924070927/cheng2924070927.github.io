@@ -293,13 +293,13 @@ var player = new DogePlayer({
   </entry>
   
   <entry>
-    <title>Hello,Word!</title>
+    <title>Hello,World!</title>
     <link href="https://lovek.me/av1/"/>
     <id>https://lovek.me/av1/</id>
     <published>2019-09-15T12:08:00.000Z</published>
-    <updated>2020-01-21T06:52:12.000Z</updated>
+    <updated>2020-04-06T01:16:04.748Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>Hi, I am lovely god.</strong></p><a id="more"></a><ul><li><p>Lovely God可爱的博客，博客搭建期间使用了主题sagiri作为开发模板，真的省去了不少麻烦，感谢<a href="https://github.com/diygod" target="_blank" rel="noopener">sagiri的作者</a>.</p></li><li><p>以后的路还长，博客刚刚搭建，人气不高，还请大家多多访问我的博客哟♡</p></li><li><p>嘘～偷偷告诉小可爱们一个小秘密哦! </p></li></ul><blockquote><p>每个来这里的小可爱都有权限在博客下面进行评论留言哦，我看到的话就会回复你们哒♡</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p><strong>Hi, I am lovely god.</strong></p><a id="more"></a>]]></content>
     
     <summary type="html">
     
