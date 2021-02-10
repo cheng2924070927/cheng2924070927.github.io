@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#fff">
+
+<link rel="preload" href="/fonts/sigmarone3.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+
+
+
+
+
+
+  
+
+<link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+
+
+  
+
+<link href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.0.53" rel="stylesheet" type="text/css" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=0.0.53">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=0.0.53">
+
+
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=0.0.53" color="#fff">
+
+
+  <link rel="manifest" href="/manifest.json">
+
+
+
+
+
+  <meta name="keywords" content="lovely,Lovely God,GitHub,可爱的博客,LovelyGod,WordPress,Typecho,lovek,可爱神,God,博客,可爱,blog" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Hi, Lovely God" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="# 溯源家里的设备比较多，都安装代理比较麻烦，还有电视等等这些安装不了代理的设备，想直接在路由器上下手实现透明代理。之前尝试过给家里的WiFi刷固件，不过WiFi的CPU做这些事情显然有些吃力，网速衰减，每次过热都必须断电等它凉下来才能继续使用，不然会频繁断网，尤其是我不在家的时候家里没人会弄，很是不方便。更换高端WiFi价格昂贵，不想花太多钱在这个上面，感觉意义不大。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="巧用矿渣玩客云，OpenClash透明代理">
+<meta property="og:url" content="https://lovek.me/av2/index.html">
+<meta property="og:site_name" content="Hi, Lovely God">
+<meta property="og:description" content="# 溯源家里的设备比较多，都安装代理比较麻烦，还有电视等等这些安装不了代理的设备，想直接在路由器上下手实现透明代理。之前尝试过给家里的WiFi刷固件，不过WiFi的CPU做这些事情显然有些吃力，网速衰减，每次过热都必须断电等它凉下来才能继续使用，不然会频繁断网，尤其是我不在家的时候家里没人会弄，很是不方便。更换高端WiFi价格昂贵，不想花太多钱在这个上面，感觉意义不大。">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/cs12.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/6251.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/adcdsv.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/0125736.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/20210210125930.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/acs.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/qqzxv.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/3.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/1.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/4.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/6.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/8.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/11.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/ebtnbdgf.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/12.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/13.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/14.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/29.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/17.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/sdvdv.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/30.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/32.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/33.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/34.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/28.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/35.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/vfdbg.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/aaaaaaaaac2.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/18.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/19.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/21.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/23.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/25.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/27.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/58.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/38.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/40-2.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/41.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/44.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/42.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/47.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/48.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/45.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/46.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/49.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/50.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/53.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/54.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/55.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/52.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/56.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/asdvf.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/ascj.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/vkv.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/dkl.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/mclj.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/acssca.PNG">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/okokok.PNG">
+<meta property="article:published_time" content="2021-02-09T06:47:12.000Z">
+<meta property="article:modified_time" content="2021-02-10T13:23:04.405Z">
+<meta property="article:author" content="Lovely God">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/cs12.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '0.0.53',
+    sidebar: {"position":"right","display":"always","offset":52,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    since: '9/15/2019 17:42:00',
+    onlineAPI: 'wss://api.diygod.me/online/',
+    site: {
+      title: 'Hi, Lovely God',
+      subtitle: '',
+      author: 'Lovely God'
+    },
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    leancloud: {
+      enable: true,
+      appID: '2VTdh2Nce1YbUB7wfNeJkQRR-gzGzoHsz',
+      appKey: 'p5Too1Skl3oeqBjns2wonaJk'
+    },
+    favicon: {
+      visibilitychange: true,
+      narmal: '/favicon.ico',
+      hidden: '/failure.ico',
+      show_text: '(*´∇｀*) 被你发现啦~',
+      hide_text: '(つェ⊂)我藏好了哦~'
+    }
+  };
+</script>
+
+
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/disqusjs@1.2.2/dist/disqus.js"></script>
+
+
+
+
+  <link rel="canonical" href="https://lovek.me/av2/"/>
+
+
+
+
+  <title>巧用矿渣玩客云，OpenClash透明代理 | Hi, Lovely God</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-48084758-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans" class="theme-darling">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-小可爱">
+          <a href="javascript:;" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sign-language"></i> <br />
+            
+            小可爱
+          </a>
+          
+            <ul class="submenu submenu-小可爱">
+              
+                
+                <li class="submenu-item submenu-item-twitter">
+                  <a href="https://twitter.com/lovelygod3/" rel="section" target="_blank">
+                    Twitter
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-简书">
+                  <a href="https://www.jianshu.com/u/95fc5b19e1fa/" rel="section" target="_blank">
+                    简书
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-github">
+                  <a href="https://github.com/cheng2924070927/" rel="section" target="_blank">
+                    GitHub
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-qq-群">
+                  <a href="https://wj.qq.com/s2/5144218/377d/" rel="section" target="_blank">
+                    QQ 群
+                  </a>
+                </li>
+              
+                
+                <li class="submenu-item submenu-item-telegram">
+                  <a href="https://t.me/lovelygod3/" rel="section" target="_blank">
+                    Telegram
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-投喂">
+          <a href="/donate/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cutlery"></i> <br />
+            
+            投喂
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-后宫">
+          <a href="/friends/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mars"></i> <br />
+            
+            后宫
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/message/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            留言板
+          </a>
+          
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于我">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            关于我
+          </a>
+          
+        </li>
+      
+
+      
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+          </form>
+      </li>
+      <li class="menu-item online"><span id="online-count"><span class="my-face">[加载中...]</span></span>人在线</li>
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper" style="background-image: url(https://cdn.jsdelivr.net/gh/cheng2924070927/Blog@v1.0.1/header-leg.jpg)">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <div class="brand">
+        <span class="logo-line-before"><i></i></span>
+        <div class="site-title">
+          <div id="animate" class="animate">
+            <span>H</span><span>i</span><span>,</span><span> </span><span>L</span><span>o</span><span>v</span><span>e</span><span>l</span><span>y</span><span> </span><span>G</span><span>o</span><span>d</span>
+          </div>
+          <div id="guide" class="guide">
+            <span>H</span><span>i</span><span>,</span><span> </span><span>L</span><span>o</span><span>v</span><span>e</span><span>l</span><span>y</span><span> </span><span>G</span><span>o</span><span>d</span>
+          </div>
+        </div>
+        <span class="logo-line-after"><i></i></span>
+      </div>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span class="my-face"><img class="site-master-avatar" itemprop="image" src="https://cdn.jsdelivr.net/gh/cheng2924070927/Blog@v1.0.4/LovelyGod3.png" alt="Lovely God" /></span>
+    <h2 class="site-master-description" itemprop="description">
+        <span>它在我的电脑上运行良好❤️</span><span>在你的电脑上却BUG百出</span>
+    </h2>
+</div>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">09</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%88%9B%E4%BD%9C%E9%9B%86/" itemprop="url" rel="index">
+          <span itemprop="name">创作集</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lovek.me/av2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lovely God">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/cheng2924070927/Blog@v1.0.4/LovelyGod3.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Lovely God">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">巧用矿渣玩客云，OpenClash透明代理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-09T14:47:12+08:00">2021-02-09</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">•</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">3265</span>
+              
+
+              
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/av2/" class="leancloud_visitors" data-flag-title="巧用矿渣玩客云，OpenClash透明代理">
+               <span class="post-meta-divider">•</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">被</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span class="post-meta-item-text">人看爆</span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="溯源"><a href="#溯源" class="headerlink" title="# 溯源"></a><span style="color:red"># </span>溯源</h2><p>家里的设备比较多，都安装代理比较麻烦，还有电视等等这些安装不了代理的设备，想直接在路由器上下手实现透明代理。之前尝试过给家里的WiFi刷固件，不过WiFi的CPU做这些事情显然有些吃力，网速衰减，每次过热都必须断电等它凉下来才能继续使用，不然会频繁断网，尤其是我不在家的时候家里没人会弄，很是不方便。更换高端WiFi价格昂贵，不想花太多钱在这个上面，感觉意义不大。<a id="more"></a>在B站 <del>看动漫</del> 吸收知识的时候，偶然看到有个UP主把玩客云刷成小服务器安装了Typecho博客。网上查了些资料这东西貌似还能刷成电视盒子或游戏盒子。我就想能不能刷成旁路由使用？就算刷不了也能充当个电视盒子备用，感觉稳赚不亏。</p>
+<h2 id="需要的硬件"><a href="#需要的硬件" class="headerlink" title="# 需要的硬件"></a><span style="color:red"># </span>需要的硬件</h2><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/cs12.jpg" width="60%">
+
+<blockquote>
+<p><strong><a href="https://taobao.com/" target="_blank"><span style="color:#fc6423">玩客云</span></a></strong><br><strong>配置：CPU：ARM 4核 1.5GHz，ROM：8GB</strong><br><strong>淘宝50元就能买到，但它的CPU是32位的，不过能用就行</strong></p>
+<blockquote>
+<p><strong><a href="https://pinduoduo.com/" target="_blank"><span style="color:#fc6423">双公头USB数据线</span></a></strong><br><strong>拼多多0.99元买的，质量还挺好</strong></p>
+<blockquote>
+<p><strong><span style="color:#fc6423">U盘</span></strong><br><strong>不会吧不会吧，你该不会连个备用U盘都没有吧</strong></p>
+<blockquote>
+<p><strong><span style="color:#fc6423">网线</span></strong><br><strong>家里WiFi送的网线</strong></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>全部下来只消费了<span style="color:red">50.99元</span>，价格还是很可观的</p>
+<h2 id="用到的软件以及固件和插件"><a href="#用到的软件以及固件和插件" class="headerlink" title="# 用到的软件以及固件和插件"></a><span style="color:red"># </span>用到的软件以及固件和插件</h2><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/6251.PNG" width="60%">
+
+<blockquote>
+<p><strong><span style="color:red"># </span>软件：</strong></p>
+<blockquote>
+<p><strong><a href="https://www.balena.io/etcher/" target="_blank"><span style="color:#fc6423">balenaEtcher</span></a></strong><br><strong>写入OpenWrt固件到U盘</strong></p>
+<blockquote>
+<p><strong><a href="https://wwa.lanzous.com/i0E7qlitoxa" target="_blank"><span style="color:#fc6423">USB_Burning_Tool</span></a></strong><br><strong>烧录Android固件到玩客云</strong></p>
+<blockquote>
+<p><strong><a href="https://wwa.lanzous.com/ir8Bflitnab" target="_blank"><span style="color:#fc6423">FinalShell</span></a></strong><br><strong>连接SSH终端</strong></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong><span style="color:red"># </span>固件：</strong></p>
+<blockquote>
+<p><strong><a href="https://wwa.lanzous.com/ikvUUlitzdg" target="_blank"><span style="color:#fc6423">Android固件</span></a></strong><br><strong>烧录进玩客云</strong></p>
+<blockquote>
+<p><strong><a href="https://wwa.lanzous.com/iFLsgliu0ih" target="_blank"><span style="color:#fc6423">OpenWrt固件</span></a></strong><br><strong>写入U盘，之后刷入玩客云eMMC闪存</strong></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><strong><span style="color:red"># </span>OpenClash：</strong></p>
+<blockquote>
+<p><strong><a href="https://wwa.lanzous.com/iHNZpljuwli" target="_blank"><span style="color:#fc6423">Clash插件</span></a></strong><br><strong>加速上网</strong></p>
+<blockquote>
+<p><strong><a href="https://wwa.lanzous.com/i3zSHljuwtg" target="_blank"><span style="color:#fc6423">Clash内核</span></a></strong><br><strong>加速内核文件</strong></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="拆解玩客云烧录固件与U盘写入OpenWrt"><a href="#拆解玩客云烧录固件与U盘写入OpenWrt" class="headerlink" title="# 拆解玩客云烧录固件与U盘写入OpenWrt"></a><span style="color:red"># </span>拆解玩客云烧录固件与U盘写入OpenWrt</h2><p>用电吹风吹热玩客云的背面，之后用工具撬开第一层塑料壳<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/adcdsv.jpg" width="60%"></p>
+<p>然后用螺丝刀拧掉这6颗螺丝，打开背壳抽出主板<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/0125736.jpg" width="60%"></p>
+<p>拿出双公头USB线,一端连接玩客云，另一端连接电脑<br><span style="color:red">踩过的坑1：USB一定要插在玩客云靠近HDMI接口的那个USB上，然后另一头一定要插在笔记本后面不能插在侧边，主机的话插在机箱后面，不然会报错</span><br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/20210210125930.jpg" width="60%"></p>
+<p>将电脑与玩客云连接好后打开USB_Burning_Tool软件，选择flash_snail烧录包<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/acs.png" width="70%"></p>
+<p>然后回到玩客云，需要短接一下主板上的那两个焊点。<br>这里不是很好操作，多试几次，先在玩客云没有通电的情况下，短接那两个焊点，之后再给玩客云通上电，这样才能进入玩客云的刷机模式<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/qqzxv.jpg" width="60%"></p>
+<p>看到USB_Burning_Tool提示连接成功就可以了，没连接上说明没有短接好，多试几次<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/3.PNG" width="70%"></p>
+<p>然后点击右边的开始，直接烧录即可，无需更改任何设置，这个过程大概持续30秒-2分钟，时间不会很长<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/1.PNG" width="70%"></p>
+<p>烧录成功之后直接右上角X号关掉软件，然后把U盘插到电脑上<br>打开balenaEtcher，点击Flash from file直接选择openwrt.zip就行，压缩包解不解压都一样<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/4.PNG" width="70%"></p>
+<p>然后点击Select target选择你的U盘，不要选错了<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/6.PNG" width="70%"></p>
+<p>最后点击Flash等待写入完成<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/8.PNG" width="70%"></p>
+<p>OK，烧录好了直接右上角X号关掉软件，注意，这里如果系统提示你格式化U盘记得点取消，不然你就白写了<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/11.PNG" width="70%"></p>
+<p>最后给玩客云断电，拔掉USB线与电脑断开连接，插上网线，让玩客云可以连接到家里的WiFi，最后插上刚刚写好的U盘<br><span style="color:red">踩过的坑2：U盘一定要插在靠近网线接口的那个USB上，不然玩客云会读不出来</span><br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/ebtnbdgf.jpg" width="70%"></p>
+<h2 id="配置OpenWrt与WiFi-DHCP服务器"><a href="#配置OpenWrt与WiFi-DHCP服务器" class="headerlink" title="# 配置OpenWrt与WiFi DHCP服务器"></a><span style="color:red"># </span>配置OpenWrt与WiFi DHCP服务器</h2><p>插上网线和写好的U盘之后，给玩客云通上电，然后看网络接口，等待接口上的两个灯都亮起来后，打开wifi管理页面可以看到有一个叫做OneCloud的IP上线了<br><span style="color:red">踩过的坑3：如果玩客云的网络接口灯只亮一个，说明你的U盘插错USB口了。如果没有看到IP上线就尝试访问一下设备列表里的其他IP，看看哪一个可以访问到OpenWrt，也许设备上线之后不一定叫OneCloud，可能名字不一样也说不定呢</span><br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/12.PNG" width="50%"></p>
+<p>浏览器输入玩客云的IP访问到OpenWrt之后，输入<span style="color:red">用户名：root</span>与<span style="color:red">密码：snail</span>登录系统<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/13.PNG" width="70%"></p>
+<p>这个界面太丑了，我们到系统属性的语言与界面里面吧主题改为Bootstrap保存并应用，方便下面的操作<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/14.PNG" width="70%"></p>
+<p>然后到系统-管理权里面更改一下管理员密码保证安全<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/29.PNG" width="50%"><br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/17.PNG" width="60%"><br>接着进入到网络-接口里面，可以看到四个接口，编辑一下LAN接口<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/sdvdv.PNG" width="50%"><br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/30.PNG" width="70%"></p>
+<p>将协议更改为静态地址并点击切换协议，之后只需要填写三个地方，第一个填写IPv4地址，第二个填写IPv4掩码，第三个填写IPv4网关</p>
+<blockquote>
+<p>IPv4地址：是指你的玩客云IP地址，因为我这里192.168.1.1与192.168.1.2都被占用了，所以我填写了192.168.1.3，随便填，只要不与其他设备的IP冲突就行，最小不要小于1，最大不要超过255</p>
+</blockquote>
+<blockquote>
+<p>IPv4掩码：填写默认的就好，也就是255.255.255.0</p>
+</blockquote>
+<blockquote>
+<p>IPv4网关：你的WiFi（主路由器）的IP，也就是你访问WiFi管理页面的那个IP地址，一般是192.168.1.1，按照网络环境填写就好，不过我的路由器是WDS无线桥接到另一个路由器上的，所以我的网关是192.168.1.2</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/32.PNG" width="70%">
+
+<p>然后最下面还有一个DHCP服务器，一定要勾选上忽略次接口，不然会导致无法上网，最后点击应用并保存<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/33.PNG" width="70%"></p>
+<p>然后这里需要等待一会，不要尝试刷新网页，之后会提示配置已回滚，记得点强制应用，就是那个红色按钮，别点错了<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/34.PNG" width="70%"></p>
+<p>强制应用之后，等待一会，倒计时结束后可能不会出现配置已应用提示，这时直接关掉网页，然后访问你刚刚设置的IPv4地址。就可以再次访问到OpenWrt页面，输入<span style="color:red">用户名：root</span>和<span style="color:red">你刚刚设置的管理员密码</span>登录系统<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/28.PNG" width="70%"></p>
+<p>回到WiFi管理页面，找到WiFi的DHCP服务器并启用，将网关、首选DNS服务器与备用DNS服务器这三个，都更改为你的玩客云IP，也就是你刚刚在OpenWrt里设置的IPv4地址，最后点击保存<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/35.PNG" width="70%"></p>
+<p>断开你的WiFi连接，重新连接一下，然后浏览器随便访问一个网址试一下能不能访问到，如果这个时候WiFi还有网，说明配置的没有任何问题。如果这个时候WiFi无法上网了，说明OpenWrt-LAN接口里的IPv4网关填错了，或者是WiFi的网关、首选DNS服务器与备用DNS服务器没有填写对，逐一排查一下<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/vfdbg.PNG" width="50%"></p>
+<p>上面的都配置好之后，现在的上网环境大概就变成了下图中的样子<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/aaaaaaaaac2.jpg" width="80%"></p>
+<h2 id="将OpenWrt刷入玩客云eMMC闪存"><a href="#将OpenWrt刷入玩客云eMMC闪存" class="headerlink" title="# 将OpenWrt刷入玩客云eMMC闪存"></a><span style="color:red"># </span>将OpenWrt刷入玩客云eMMC闪存</h2><p>之后打开FinalShell软件，点击左上角的文件夹图标打开连接管理器窗口，在里面右键新建一个SSH连接<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/18.PNG" width="70%"></p>
+<p>名称随意，主机填玩客云的IP，也就是刚刚设置的IPv4地址，端口默认22无需更改，认证方式选择密码，输入你登录OpenWrt的用户名与你设置的管理员密码，填完之后直接确定<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/19.PNG" width="70%"></p>
+<p>右键你刚刚创建的SSH连接它，如果弹出是否接受该密钥，选择接受并保存就可以了，之后便进入到了玩客云OpenWrt的SSH终端<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/21.PNG" width="70%"></p>
+<p>首先格式化一下eMMC闪存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh &#x2F;root&#x2F;format-emmc-partition.sh</span><br></pre></td></tr></table></figure>
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/23.PNG" width="70%">
+
+<p>然后将U盘里的OpenWrt刷入eMMC闪存，这个命令会清空BOOTFS与ROOTFS这两个系统分区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh &#x2F;root&#x2F;install-openwrt-to-emmc.sh</span><br></pre></td></tr></table></figure>
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/25.PNG" width="70%">
+
+<p>看到 [ …. ] install finished，就表示刷入成功了，这个时候就可以关掉SSH终端，然后拔下玩客云的电源，再拔出U盘，U盘拔出之后重新给玩客云通上电就行了，因为OpenWrt已经刷到了玩客云的eMMC内存里，U盘已经不需要了<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/27.PNG" width="70%"></p>
+<h2 id="安装OpenClash插件加速上网"><a href="#安装OpenClash插件加速上网" class="headerlink" title="# 安装OpenClash插件加速上网"></a><span style="color:red"># </span>安装OpenClash插件加速上网</h2><p>打开OpenWrt网络存储里面的文件传输，点击选择文件，吧Clash插件(Clash0.37.3.ipk)与Clash内核(Clash)上传到OpenWrt里面，可以看到，他们保存在/tmp/.filetransfer/目录下<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/58.PNG" width="60%"><br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/38.PNG" width="70%"></p>
+<p>再次打开FinalShell软件，连接上玩客云的OpenWrt SSH终端，切换到/tmp/.filetransfer/目录下，ls一下就可以看到刚刚上传的Clash插件与Clash内核</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;tmp&#x2F;.filetransfer&#x2F;</span><br></pre></td></tr></table></figure>
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/40-2.PNG" width="70%">
+
+<p>然后将Clash0.37.3.ipk移动到/tmp/目录下，之后可以cd切换到/tmp目录下用ls看一下有没有成功移动过来，移动过来后，将clash插件强制安装</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mv clash0<span class="number">.37</span><span class="number">.3</span>.ipk /tmp/.filetransfer/ /tmp/</span><br><span class="line"><span class="comment">#移动clash0.37.3.ipk到/tmp/目录下</span></span><br><span class="line">opkg install /tmp/clash0<span class="number">.37</span><span class="number">.3</span>.ipk  --force-depends</span><br><span class="line"><span class="comment">#强制安装clash插件</span></span><br></pre></td></tr></table></figure>
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/41.PNG" width="90%">
+
+<p>之后cd切换回/tmp/.filetransfer/目录下，ls看一下clash内核是否还在，然后将clash内核移动到/etc/openclash/core/目录下，这里会提示can’t remove ‘/etc/openclash/core/.filetransfer’: Is a directory，不过没关系，ls一下没看到文件就说明移动了，实在不放心cd再切换到/etc/openclash/core/目录然后ls看一下clash是不是在里面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv clash &#x2F;tmp&#x2F;.filetransfer&#x2F; &#x2F;etc&#x2F;openclash&#x2F;core&#x2F;</span><br></pre></td></tr></table></figure>
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/44.PNG" width="90%">
+
+<p>最后关掉FinalShell，Ctrl+F5刷新一下OpenWrt的浏览器页面，然后就可以在服务里看到Openclash选项<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/42.PNG" width="80%"></p>
+<p>点击clash的全局设置-模式设置，更改页面操作模式为Fake-IP模式，启用UDP流量转发，然后点击切换操作模式<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/47.PNG" width="70%"></p>
+<p>之后切换到基本设置里面，内核编译版本选择Linux-armv7，然后点击最下面的应用配置保存一下<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/48.PNG" width="70%"></p>
+<p>最后切换到配置文件管理页面，上传你的yaml配置文件，上传成功之后点一下切换，启用这个配置文件<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/45.PNG" width="60%"><br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/46.PNG" width="70%"></p>
+<p>回到运行状态页面，点击启动Openclash，之后等待clash配置完毕后刷新一下网页，没有看到任何红色则表示已经配置好了，上面提示让我们关闭IPv6 DHCP服务，经过测试，其实这个关不关都无所谓，无影响，如果你是完美主义者，可以去编辑LAN接口里面的DHCP服务器下的IPv6设置，将DHCPv6服务设置为禁用，就不会出现这个提示了<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/49.PNG" width="60%"><br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/50.PNG" width="60%"></p>
+<p>然后到全局设置里的仪表盘设置下，修改一下clash的监听端口与clash的管理页面登录密钥，保证安全<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/53.PNG" width="70%"></p>
+<p>最后回到clash运行状态页，打开Dashboard控制面板，输入Host与端口和密钥</p>
+<blockquote>
+<p>Host：填玩客云的IP地址，也就是之前在LAN接口设置的IPv4地址</p>
+</blockquote>
+<blockquote>
+<p>端口：填刚刚在仪表盘设置的clash监听端口</p>
+</blockquote>
+<blockquote>
+<p>密钥：填刚刚在仪表盘设置的clash管理页面登录密钥</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/54.PNG" width="70%">
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/55.PNG" width="70%">
+
+<p>然后回到clash运行状态页，打开Yacd控制面板，如果看到流量有上传和下载，就表示当前网络已经处于加速状态了<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/52.PNG" width="70%"></p>
+<p>点击Proxies，在这里可以切换你的加速服务器，选择一个最快的服务器就好<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/56.PNG" width="70%"></p>
+<p>到这里就可以了，吧需要加速的设备连上这个WiFi，就可以实现不挂代理加速了</p>
+<h2 id="结尾补充"><a href="#结尾补充" class="headerlink" title="# 结尾补充"></a><span style="color:red"># </span>结尾补充</h2><p>有时候家里可能有人需要加速上网，也有人不需要，这时候就需要两个WiFi信号了，可以单独再弄一个WiFi，WDS无限桥接到主WiFi上，玩客云旁路由连接到第二个WiFi上，主WiFi正常使用，第二个WiFi走旁路由，可以灵活运用，代理与正常随意切换<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/asdvf.jpg" width="80%"></p>
+<h2 id="安装一个主题"><a href="#安装一个主题" class="headerlink" title="# 安装一个主题"></a><span style="color:red"># </span>安装一个主题</h2><p>到系统-软件包-OPKG配置里面找到自定义软件源，吧下面的软件源填进去并提交</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">src&#x2F;gz openwrt_core http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;lede&#x2F;releases&#x2F;18.06.4&#x2F;targets&#x2F;x86&#x2F;64&#x2F;packages</span><br><span class="line">src&#x2F;gz openwrt_base http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;lede&#x2F;releases&#x2F;18.06.4&#x2F;packages&#x2F;x86_64&#x2F;base</span><br><span class="line">src&#x2F;gz openwrt_luci http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;lede&#x2F;releases&#x2F;18.06.4&#x2F;packages&#x2F;x86_64&#x2F;luci</span><br><span class="line">src&#x2F;gz openwrt_packages http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;lede&#x2F;releases&#x2F;18.06.4&#x2F;packages&#x2F;x86_64&#x2F;packages</span><br><span class="line">src&#x2F;gz openwrt_routing http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;lede&#x2F;releases&#x2F;18.06.4&#x2F;packages&#x2F;x86_64&#x2F;routing</span><br><span class="line">src&#x2F;gz openwrt_telephony http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;lede&#x2F;releases&#x2F;18.06.4&#x2F;packages&#x2F;x86_64&#x2F;telephony</span><br></pre></td></tr></table></figure>
+<img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/ascj.PNG" width="90%">
+
+<p>回到软件包-动作页面刷新列表，就会加载提交的软件源了<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/vkv.PNG" width="70%"><br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/dkl.PNG" width="70%"></p>
+<p>然后下面选择L，在列表里找到luci-theme-material（从下往上找比较快）<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/mclj.PNG" width="70%"><br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/acssca.PNG" width="70%"></p>
+<p>点击右边的安装就行了，玩客云的CPU是32位的，不要随便安装一些奇奇怪怪的主题，不然容易后台无法访问<br><img src="https://cdn.jsdelivr.net/gh/cheng2924070927/PicGo/img/okokok.PNG" width="70%"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div class="post-share">分享到：</div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赞赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WX.png" alt="Lovely God 微信扫一扫，向我赞赏"/>
+        <p>微信扫一扫，向我赞赏</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/ZFB.png" alt="Lovely God 支付宝扫一扫，向我赞赏"/>
+        <p>支付宝扫一扫，向我赞赏</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/av10/" rel="next" title="现在可以订阅博客了！">
+                <i class="fa fa-chevron-left"></i> 现在可以订阅博客了！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <div id="dsqjs">
+          <section class="dsqjs-info">
+            <p id="dsqjs-load-disqus" class="dsqjs-message">评论完整模式加载中...如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        window.DISQUS = null;
+        new DisqusJS({
+          shortname: 'LovelyGod',
+          siteName: 'Hi, Lovely God',
+          identifier: 'av2/',
+          url: 'https://lovek.me/av2/',
+          api: 'https://disqus.skk.moe/disqus/',
+          apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
+          admin: 'Lovely God',
+          adminLabel: '发电',
+        });
+      </script>
+    
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://cdn.jsdelivr.net/gh/cheng2924070927/Blog@v1.0.4/card2.jpg"
+                alt="Lovely God" />
+            
+              <p class="site-author-name" itemprop="name"><span style="opacity:.2;">网红</span>Lovely</p>
+              <p class="site-description motion-element" itemprop="description">Lovely God</p>
+          </div>
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/lovelygod3" target="_blank" title="Twitter" data-balloon="Twitter" data-balloon-pos="up">
+                    
+                       <i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/cheng2924070927" target="_blank" title="GitHub" data-balloon="GitHub" data-balloon-pos="up">
+                    
+                       <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://wj.qq.com/s2/5144218/377d" target="_blank" title="QQ 群" data-balloon="QQ 群" data-balloon-pos="up">
+                    
+                       <i class="fa fa-fw fa-qq"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://t.me/lovelygod3" target="_blank" title="Telegram 频道" data-balloon="Telegram 频道" data-balloon-pos="up">
+                    
+                       <i class="fa fa-fw fa-telegram"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://t.me/" target="_blank" title="Telegram 群" data-balloon="Telegram 群" data-balloon-pos="up">
+                    
+                       <i class="fa fa-fw fa-telegram"></i></a>
+                </span>
+              
+            
+          </div>
+
+          <details class="views-top-wrap">
+            <summary class="views-top-name">看爆 Top10</summary>
+            <ul class="views-top"></ul>
+          </details>
+
+          
+            <div class="feed-link motion-element">
+              
+              <a class="feed-email" href="http://eepurl.com/gQlA05" rel="alternate" target="_blank">
+                <i class="fa fa-envelope"></i>
+                <span>Email 订阅</span>
+              </a>
+              
+              <a class="feed-rss" href="/atom.xml" rel="alternate" target="_blank">
+                <i class="fa fa-rss"></i>
+                <span>RSS 订阅</span>
+              </a>
+            </div>
+          
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+            
+
+          </nav>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.png" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#溯源"><span class="nav-number">1.</span> <span class="nav-text"># 溯源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要的硬件"><span class="nav-number">2.</span> <span class="nav-text"># 需要的硬件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用到的软件以及固件和插件"><span class="nav-number">3.</span> <span class="nav-text"># 用到的软件以及固件和插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解玩客云烧录固件与U盘写入OpenWrt"><span class="nav-number">4.</span> <span class="nav-text"># 拆解玩客云烧录固件与U盘写入OpenWrt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置OpenWrt与WiFi-DHCP服务器"><span class="nav-number">5.</span> <span class="nav-text"># 配置OpenWrt与WiFi DHCP服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将OpenWrt刷入玩客云eMMC闪存"><span class="nav-number">6.</span> <span class="nav-text"># 将OpenWrt刷入玩客云eMMC闪存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装OpenClash插件加速上网"><span class="nav-number">7.</span> <span class="nav-text"># 安装OpenClash插件加速上网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾补充"><span class="nav-number">8.</span> <span class="nav-text"># 结尾补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装一个主题"><span class="nav-number">9.</span> <span class="nav-text"># 安装一个主题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-image"></div>
+      <div class="footer-inner">
+        <p><span class="my-face">博客已萌萌哒运行<span id="since"></span>(●'◡'●)ﾉ<i class="fa fa-heart throb" style="color: #d43f57;"></i></span> </p>
+<p>托管于<a href="https://github.com/" target="_blank" rel="nofollow"> GitHub</a>. <a href="https://www.upyun.com/" target="_blank" rel="nofollow">又拍云</a> 提供 CDN 服务. <a href="http://www.google.com/analytics/" target="_blank" rel="nofollow">Google Analytics </a>提供网站统计服务. <a href="https://www.cloudxns.net/" target="_blank" rel="nofollow">CloudXNS </a>提供 DNS 解析服务.</p>
+
+<p>© <span itemprop="copyrightYear">2021</span> Hi, Lovely God.
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    Theme By <a href="https://github.com/cheng2924070927" target="_blank" target  ="_blank" class="external" rel="nofollow noopener">LovelyGod</a> v0.0.53.
+    <a href="/sitemap.xml" target="_blank">站点地图</a>.
+    lovek.me.
+</p>
+<p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">Lovely God</span>.（づ￣3￣）づ╭<i class="fa fa-heart throb" style="color: #d43f57;"></i>～ </p>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    <canvas id="evanyou"></canvas>
+    <div id="aplayer-fixed"></div>
+
+    
+
+  </div>
+
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.53"></script>
+
+  
+
+
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <!--<script>
+    // remove service worker cache
+    // from https://stackoverflow.com/questions/33704791/how-do-i-uninstall-a-service-worker
+    "use strict";
+    if(navigator.serviceWorker)
+    {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister()
+            }
+        })
+    }
+  </script>-->
+
+  <script>
+    var serviceWorkerUri = '/sw.js';
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register(serviceWorkerUri).then(function() {
+          if (navigator.serviceWorker.controller) {
+            console.log('Assets cached by the controlling service worker.');
+          } else {
+            console.log('Please reload this page to allow the service worker to handle network operations.');
+          }
+        }).catch(function(error) {
+          console.log('ERROR: ' + error);
+        });
+    } else {
+        console.log('Service workers are not supported in the current browser.');
+    }
+  </script>
+</body>
+</html>
