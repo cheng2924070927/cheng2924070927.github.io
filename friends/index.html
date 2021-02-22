@@ -109,7 +109,7 @@
     tabs: true,
     motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     since: '9/15/2019 17:42:00',
-    onlineAPI: 'wss://api.diygod.me/online/',
+    onlineAPI: '',
     site: {
       title: 'Hi, Lovely God',
       subtitle: '',
@@ -127,9 +127,9 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
     leancloud: {
-      enable: true,
-      appID: '2VTdh2Nce1YbUB7wfNeJkQRR-gzGzoHsz',
-      appKey: 'p5Too1Skl3oeqBjns2wonaJk'
+      enable: false,
+      appID: '4Ad1pcpUDpbYre5ap9ytRHIx-gzGzoHsz',
+      appKey: 'wdBLlNQseY34YUfEz4IGUjyh'
     },
     favicon: {
       visibilitychange: true,
@@ -454,38 +454,13 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <div id="dsqjs">
-          <section class="dsqjs-info">
-            <p id="dsqjs-load-disqus" class="dsqjs-message">评论完整模式加载中...如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
-          </section>
-        </div>
-      </div>
+      <div id="vcomments"></div>
     </div>
-
   
 
 
 
 
-
-  
-
-    
-      <script type="text/javascript">
-        window.DISQUS = null;
-        new DisqusJS({
-          shortname: 'LovelyGod',
-          siteName: 'Hi, Lovely God',
-          identifier: 'friends/index.html',
-          url: 'https://lovek.me/friends/index.html',
-          api: 'https://disqus.skk.moe/disqus/',
-          apikey: 'V3lVG7OOwiI8Qpp9AQJL2PGVsno1OXPAuvznOqrgRhn2G3udRz8aPnKaSc620DF2',
-          admin: 'Lovely God',
-          adminLabel: '发电',
-        });
-      </script>
-    
 
   
 
@@ -503,12 +478,31 @@
 
 
 
+  
 
 
 
 
 
 
+
+
+
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7-rc3/dist/Valine.min.js"></script>
+  <script type="text/javascript">
+    new Valine({
+        av: AV,
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        app_id: '4Ad1pcpUDpbYre5ap9ytRHIx-gzGzoHsz',
+        app_key: 'kx10QIXYVyXDWwleo7gB8M3M',
+        placeholder: '小可爱你有什么想说的嘛？'
+    });
+  </script>
 
 
 
